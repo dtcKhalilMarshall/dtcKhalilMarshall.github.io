@@ -1,0 +1,127 @@
+ /* styles for reposityory homepage from TP2 */
+ 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #cccccc;
+    font-family: 'Playfair Display', serif;
+    font-weight:400;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.1em;
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header,
+section {
+    min-height: 400px;
+    border-radius: 0.5rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.35), 0 15px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #51a2bb 0%, #eeeeee 100%);
+    gap: 1.5rem;
+}
+
+header:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    text-align: center;
+}
+
+section {
+    background: linear-gradient(135deg, #51a2bb 0%, #3a8aa3 100%);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(81, 162, 187, 0.3);
+}
+
+section h2 {
+    color: #000;
+}
+
+section h2::before {
+    content: "Q: ";
+}
+
+section h2::after {
+    content: "?";
+}
+
+section p {
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+#coolPic img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    filter: grayscale(100%) brightness(200%) contrast(200%);
+    mix-blend-mode: multiply;
+    transition: filter 0.3s ease;
+}
+
+#coolPic img:hover {
+    filter: grayscale(50%) brightness(180%) contrast(180%);
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    header,
+    section {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+
+    body {
+        padding: 0;
+    }
+}
