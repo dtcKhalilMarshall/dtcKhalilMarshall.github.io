@@ -1,1 +1,139 @@
 
+/* styles for weather app */
+
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Dancing+Script:wght@400..700&family=Sofia&family=Yeseva+One&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+ background-image: url(cloudsloop.gif);
+ background-repeat:no-repeat;
+ background-size:100% 100%;
+ .averia-sans-libre-bold-italic 
+  font-family: "Averia Sans Libre", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* weather cards grid */
+#weatherCards {
+	box-sizing: border-box;
+	position: relative;
+	display: grid;
+	margin-top: 0;
+	margin: 3vh;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 2em;
+	grid-auto-flow: row;
+	grid-template-areas:
+	". ."
+	". .";
+}
+
+.card {
+    
+	font-size: 14px;
+	padding: 25px;
+}
+
+.card, .tempCard {
+	background: rgba(255, 255, 255, 0.1);
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	display: block;
+	border-radius: 10px;
+	text-transform: uppercase;
+}
+
+.tempCard {
+	width: auto;
+	margin: 3vh;
+	padding: 20px;
+}
+
+#temperature {
+	font-size: 20px;
+}
+
+#tempF {
+	font-size: 20px;
+}
+
+#wind, #humidity, #cloudCover {
+	font-size: 20px;
+}
+
+#conditions {
+	font-size: 20px;
+}
+
+/* modal styling */
+.hidden {
+	display: none;
+}
+
+.modalContent {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+	color: #333;
+	padding: 20px;
+	border-radius: 10px;
+	width: 300px;
+	text-align: center;
+	box-shadow: 2px 2px 10px rgba(51, 51, 51, 0.1);
+}
+
+#modalCover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(255,255,255,0.2);
+	backdrop-filter: blur(4px);
+}
+
+#openModal {
+	display: block;
+	margin: 25px auto;
+}
+
+#submitLocation {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.transparent-button {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black; 
+  padding: 10px 20px; 
+  cursor: pointer;
+}
+
+.transparent-button:hover {
+  background-color: #f0f0f0; 
+  border-color: #007bff; 
+}
+
+#locationDisplay {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	height: 8vh;
+	width: auto;
+	margin-top: 5vh;
+	font-size:16px;
+}
+
+
