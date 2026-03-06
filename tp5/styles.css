@@ -9,7 +9,7 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 }
 
 :root {
-  --cardSize: 250px; /* variable for card dimensions */
+  --cardSize: 130px; /* variable for card dimensions */
 }
 
 /****************************** general card styling */
@@ -77,6 +77,22 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   background-color: rgb(173, 216, 230);
 }
 
+.pair5 .cardBottom {
+  background-color: rgb(255, 255, 0);
+}
+
+.pair6 .cardBottom {
+  background-color: rgb(255, 165, 0);
+}
+
+.pair7 .cardBottom {
+  background-color: rgb(96, 31, 215);
+}
+
+.pair8 .cardBottom {
+  background-color: rgb(245, 200, 127);
+}
+
 
 /******************************8 gameBoard formatting */
 
@@ -86,4 +102,16 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 2, 1fr;
   gap: 1rem;
+}
+
+@media screen and (orientation: landscape) {
+  
+  :root {
+    --cardSize: 20vw;
+
+    #gameBoard {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
 }
