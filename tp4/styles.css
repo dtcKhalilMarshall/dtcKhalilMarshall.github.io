@@ -8,26 +8,40 @@
 }
 
 #gameBoard {
-  position:relative;
-  width: var(--gameBoard-size);
-  height: var(--gameBoard-size);
+  position: relative;
+  width: calc(var(--gameBoard-size)-var(--gameBoardSpacer));
+  height: calc(var(--gameBoard-size)-var(--gameBoardSpacer));
   background-color: black;
-
-  display: grid;
-  grid-template-columns: repeat(1fr, 1fr, 1fr);
-  grid-template-rows: repeat(1fr, 1fr, 1fr);
-  gap: var(--gameBoardSpacer);
 }
 
 .gameSpace {
-  position:relative;
+  position: absolute;
     background-color: white;
-    font: size 10rem;
-    text-transform: uppercase;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: bitcount-prop-double-ink, serif;
+    width: calc( (var(--gameBoard-size) /3)-var(--gameBoardSpacer));
+    height: calc( (var(--gameBoard-size) /3)-var(--gameBoardSpacer));
+    font-family: "Bitcount Prop Double Ink", sans-serif;
+    font: 10rem;
     overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.row1 {
+  top: 0;
+}
+.row2 {
+  top: calc (var(--gameBoard-size) /3);
+}
+.row3 {
+  top: calc (var(--gameBoard-size) /3 * 2);
+}
+
+.col1 {
+  left: 0;
+}
+.col2 {
+  left: calc (var(--gameBoard-size) /3);
+}
+.col3 {
+    left: calc (var(--gameBoard-size) /3 * 2);
 }
