@@ -43,6 +43,9 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   border: 2px solid darkblue;
   font-size: 42px;
   backface-visibility: hidden; /* special CSS property relevant to 3D flips */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cardTop {
@@ -56,62 +59,73 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
 }
 
-
 /****************************** specific card styling */
 
-
-
 .pair1 .cardBottom {
-  background-color: darkred;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUAwqKw1sMtVKNGDYscWwjB64CZt803OExNA&s');
+  background-size: cover;
+  background-position: center;
+
 }
 
 .pair2 .cardBottom {
-  background-color: rgb(191, 234, 191);
+background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:bd09be5c-2d6a-4b82-ba32-fd8aabac45ec?quality=0.7&gen=ntrn&format=jpg&width=1200&height=630&crop=true');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair3 .cardBottom {
-  background-color: rgb(255, 182, 193);
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:afc88614-4494-4e11-8b56-ae41cd042eca?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair4 .cardBottom {
-  background-color: rgb(173, 216, 230);
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:9a69c9f1-8a8b-46e5-a02c-b0f1087d6543?quality=0.7&gen=ntrn&format=jpg&width=1200&height=630&crop=true');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair5 .cardBottom {
-  background-color: rgb(255, 255, 0);
+   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:1d8c4c5e-269e-4e74-bea3-a24b60b99633?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair6 .cardBottom {
-  background-color: rgb(255, 165, 0);
+ background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:8323c384-b576-4e71-acba-42a2ecf69a3a?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair7 .cardBottom {
-  background-color: rgb(96, 31, 215);
+   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBz2ysaKFgH2aZD0oRYuHw8jgF6xIauZ9m7w&s');
+  background-size: cover;
+  background-position: center;
 }
 
 .pair8 .cardBottom {
-  background-color: rgb(245, 200, 127);
+   background-image: url('https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_main_characters.png');
+  background-size: cover;
+  background-position: center;
 }
 
-
-/******************************8 gameBoard formatting */
+/****************************** gameBoard formatting */
 
 #gameBoard {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 2, 1fr;
+  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
 }
 
 @media screen and (orientation: landscape) {
-  
   :root {
     --cardSize: 20vw;
-
-    #gameBoard {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-    }
+  }
+  #gameBoard {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 }
