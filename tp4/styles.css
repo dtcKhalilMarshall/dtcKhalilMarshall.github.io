@@ -1,1 +1,29 @@
+/* styles for the TP4: Tic-Tac-Toe project */
 
+:root {
+---gameBoard-size: 80vh;
+--gameBoardSpacer: 15px;
+}
+
+#gameBoard {
+  position:relative;
+  width: var(--gameBoard-size);
+  height: var(--gameBoard-size);
+  background-color: black;
+
+  display: grid;
+  grid-template-columns: repeat(1fr, 1fr, 1fr);
+  grid-template-rows: repeat(1fr, 1fr, 1fr);
+  gap: var(--gameBoardSpacer);
+}
+
+.gameSpace {
+  position:relative;
+    background-color: white;
+    font: size 10rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
