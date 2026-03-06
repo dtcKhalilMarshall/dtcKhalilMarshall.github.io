@@ -4,6 +4,13 @@
 To achieve the flipping effect on a mouse-over (hover), we need to position and style the nest of DOM objects with a handful of special 3D-rotation CSS properties, a transform rotation applied on :hover, and transitions to make the rotations apply smoothly.
 */
 
+body {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd1699c1-baaa-4632-8a2f-c609bcb3cb0e/djnu1oa-147970c1-d3e3-4ade-9d6e-34d11ff71c31.png/v1/fill/w_1192,h_670,q_70,strp/bikini_bottom_background__free_to_use__by_spongebobothershows1_djnu1oa-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQzOSIsInBhdGgiOiIvZi9jZDE2OTljMS1iYWFhLTQ2MzItOGEyZi1jNjA5YmNiM2NiMGUvZGpudTFvYS0xNDc5NzBjMS1kM2UzLTRhZGUtOWQ2ZS0zNGQxMWZmNzFjMzEucG5nIiwid2lkdGgiOiI8PTI1NjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.rS6UWAlaSyVBpx1gNPP-wNu3FC4EjfUsbjOKilrmxpw');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,11 +53,11 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
 }
 
 .cardTop {
-  background-color: darkblue;
-  color: #eee;
+  background-color: transparent;
 }
 
 .cardBottom {
@@ -61,11 +68,25 @@ To achieve the flipping effect on a mouse-over (hover), we need to position and 
 
 /****************************** specific card styling */
 
+.pair1 .cardTop {
+  background-image: url('https://wallpapercave.com/wp/JjTLADQ.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
 .pair1 .cardBottom {
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUAwqKw1sMtVKNGDYscWwjB64CZt803OExNA&s');
   background-size: cover;
   background-position: center;
 
+}
+
+.pair2 .cardTop {
+  background-image: url('https://wallpapers-clan.com/wp-content/uploads/2023/11/spongebob-patrick-star-face-pink-desktop-wallpaper-preview.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .pair2 .cardBottom {
@@ -74,10 +95,24 @@ background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kid
   background-position: center;
 }
 
+.pair3 .cardTop {
+  background-image: url('https://i.pinimg.com/736x/31/01/87/310187237738603762a69fc43b4a2607.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
 .pair3 .cardBottom {
   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:afc88614-4494-4e11-8b56-ae41cd042eca?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
+}
+
+.pair4 .cardTop {
+  background-image: url('https://wallpapers.com/images/hd/sandy-cheeks-close-up-u7jxfe532jyd0llt.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .pair4 .cardBottom {
@@ -86,10 +121,24 @@ background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kid
   background-position: center;
 }
 
+.pair5 .cardTop {
+  background-image: url('https://i.pinimg.com/736x/01/29/51/0129515c742784c3993904506c5b3baa.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
 .pair5 .cardBottom {
    background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:1d8c4c5e-269e-4e74-bea3-a24b60b99633?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
+}
+
+.pair6 .cardTop {
+  background-image: url('https://i.redd.it/ksaxa63lbyv81.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .pair6 .cardBottom {
@@ -98,10 +147,24 @@ background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kid
   background-position: center;
 }
 
+.pair7 .cardTop {
+  background-image: url('https://w0.peakpx.com/wallpaper/582/946/HD-wallpaper-plankton-faces-nickelodeon-cartoon-sopngebob.jpg');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+}
+
 .pair7 .cardBottom {
    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBz2ysaKFgH2aZD0oRYuHw8jgF6xIauZ9m7w&s');
   background-size: cover;
   background-position: center;
+}
+
+.pair8 .cardTop {
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/78cc5c31-1765-4c6a-b16e-9ad7ac0bc38d/de7fq19-32e05e08-e419-4542-91b5-5879462ae846.png/v1/fill/w_1280,h_971,q_80,strp/spongebob_squarepants_intro_logo__my_version__by_jesusantonioda_de7fq19-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTcxIiwicGF0aCI6Ii9mLzc4Y2M1YzMxLTE3NjUtNGM2YS1iMTZlLTlhZDdhYzBiYzM4ZC9kZTdmcTE5LTMyZTA1ZTA4LWU0MTktNDU0Mi05MWI1LTU4Nzk0NjJhZTg0Ni5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.DrdPb9XBWWl2uqD5DznHMv6nMh9-iLTLmtLFhEzUJEI');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
 }
 
 .pair8 .cardBottom {
