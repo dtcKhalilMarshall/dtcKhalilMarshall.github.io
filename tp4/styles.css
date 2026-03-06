@@ -1,49 +1,28 @@
-/* styles for the TP4: Tic-Tac-Toe project */
-
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink&display=swap");
 
 :root {
   --gameBoard-size: 80vh;
-  --gameBoardSpacer: 15px;
 }
 
 #gameBoard {
-  position: relative;
-  width: calc(var(--gameBoard-size) - var(--gameBoardSpacer));
-  height: calc(var(--gameBoard-size) - var(--gameBoardSpacer));
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: var(--gameBoard-size);
+  height: var(--gameBoard-size);
+  gap: 2px;
   background-color: black;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .gameSpace {
-  position: absolute;
   background-color: white;
-  width: calc((var(--gameBoard-size) / 3) - var(--gameBoardSpacer));
-  height: calc((var(--gameBoard-size) / 3) - var(--gameBoardSpacer));
   font-family: "Bitcount Prop Double Ink", sans-serif;
   font-size: 3rem;
-  overflow: hidden;
-  text-align: center;
-  text-transform: uppercase;
-  border: 2px solid purple; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid purple;
   box-sizing: border-box;
-}
-
-.row1 {
-  top: 0;
-}
-.row2 {
-  top: calc(var(--gameBoard-size) / 3);
-}
-.row3 {
-  top: calc(var(--gameBoard-size) / 3 * 2);
-}
-
-.col1 {
-  left: 0;
-}
-.col2 {
-  left: calc(var(--gameBoard-size) / 3);
-}
-.col3 {
-  left: calc(var(--gameBoard-size) / 3 * 2);
 }
