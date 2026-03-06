@@ -1,5 +1,7 @@
 /* styles for the TP4: Tic-Tac-Toe project */
 
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap");
+
 :root {
 ---gameBoard-size: 80vh;
 --gameBoardSpacer: 15px;
@@ -26,4 +28,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: bitcount-prop-double-ink, serif;
+    overflow: hidden;
 }
