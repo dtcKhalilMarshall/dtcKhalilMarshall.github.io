@@ -1,47 +1,49 @@
 /* styles for the TP4: Tic-Tac-Toe project */
 
-@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink&display=swap");
 
 :root {
----gameBoard-size: 80vh;
---gameBoardSpacer: 15px;
+  --gameBoard-size: 80vh;
+  --gameBoardSpacer: 15px;
 }
 
 #gameBoard {
   position: relative;
-  width: calc(var(--gameBoard-size)-var(--gameBoardSpacer));
-  height: calc(var(--gameBoard-size)-var(--gameBoardSpacer));
+  width: calc(var(--gameBoard-size) - var(--gameBoardSpacer));
+  height: calc(var(--gameBoard-size) - var(--gameBoardSpacer));
   background-color: black;
 }
 
 .gameSpace {
   position: absolute;
-    background-color: white;
-    width: calc( (var(--gameBoard-size) /3)-var(--gameBoardSpacer));
-    height: calc( (var(--gameBoard-size) /3)-var(--gameBoardSpacer));
-    font-family: "Bitcount Prop Double Ink", sans-serif;
-    font: 10rem;
-    overflow: hidden;
-    text-align: center;
-    text-transform: uppercase;
+  background-color: white;
+  width: calc((var(--gameBoard-size) / 3) - var(--gameBoardSpacer));
+  height: calc((var(--gameBoard-size) / 3) - var(--gameBoardSpacer));
+  font-family: "Bitcount Prop Double Ink", sans-serif;
+  font-size: 3rem;
+  overflow: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid purple; 
+  box-sizing: border-box;
 }
 
 .row1 {
   top: 0;
 }
 .row2 {
-  top: calc (var(--gameBoard-size) /3);
+  top: calc(var(--gameBoard-size) / 3);
 }
 .row3 {
-  top: calc (var(--gameBoard-size) /3 * 2);
+  top: calc(var(--gameBoard-size) / 3 * 2);
 }
 
 .col1 {
   left: 0;
 }
 .col2 {
-  left: calc (var(--gameBoard-size) /3);
+  left: calc(var(--gameBoard-size) / 3);
 }
 .col3 {
-    left: calc (var(--gameBoard-size) /3 * 2);
+  left: calc(var(--gameBoard-size) / 3 * 2);
 }
