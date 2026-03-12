@@ -10,25 +10,33 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="nextPlayer">Current Player: <span></span></div>
+  <!-- Current Player Indicator -->
+  <div id="nextPlayer">
+    Current Player: <span></span>
+  </div>
+
+  <!-- Game Result Overlay -->
   <div id="gameResult"></div>
-  <div id="gameBoard">
+
+  <!-- Game Board with the same structure as original -->
+  <div id="gameBoard" role="grid" aria-label="Tic Tac Toe Board">
     <div class="row">
-      <div class="gameSpace" id="a1"></div>
-      <div class="gameSpace" id="a2"></div>
-      <div class="gameSpace" id="a3"></div>
+      <div class="gameSpace" id="a1" role="gridcell" aria-label="Row A, Column 1"></div>
+      <div class="gameSpace" id="a2" role="gridcell" aria-label="Row A, Column 2"></div>
+      <div class="gameSpace" id="a3" role="gridcell" aria-label="Row A, Column 3"></div>
     </div>
     <div class="row">
-      <div class="gameSpace" id="b1"></div>
-      <div class="gameSpace" id="b2"></div>
-      <div class="gameSpace" id="b3"></div>
+      <div class="gameSpace" id="b1" role="gridcell" aria-label="Row B, Column 1"></div>
+      <div class="gameSpace" id="b2" role="gridcell" aria-label="Row B, Column 2"></div>
+      <div class="gameSpace" id="b3" role="gridcell" aria-label="Row B, Column 3"></div>
     </div>
     <div class="row">
-      <div class="gameSpace" id="c1"></div>
-      <div class="gameSpace" id="c2"></div>
-      <div class="gameSpace" id="c3"></div>
+      <div class="gameSpace" id="c1" role="gridcell" aria-label="Row C, Column 1"></div>
+      <div class="gameSpace" id="c2" role="gridcell" aria-label="Row C, Column 2"></div>
+      <div class="gameSpace" id="c3" role="gridcell" aria-label="Row C, Column 3"></div>
     </div>
   </div>
+
   <!-- Reset Button -->
   <button id="resetButton">Reset Game</button>
 </body>
