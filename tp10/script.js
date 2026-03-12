@@ -6,6 +6,12 @@ let rowC = [ "-", "-", "-" ];
 // track whos turn it is
 let currentTurn = "x";
 
+//track number of turns left
+let remainingTurns = 9;
+
+// track if game is over
+let gameOver = false;
+
 // set up blank variable for current player DOM element
 let currentPlayer;
 
@@ -64,10 +70,60 @@ function checkGameboard(rowA, rowB, rowC) {
 function clickSquare() {
 
  // only proceed if space is empty
- if (this.innerHTML ==""){
+ if ( (this.innerHTML =="") && (!gameOver) ) {
 
   //set space
   this.innerHTML = currentTurn;
+  this.classList.add("clicked");
+
+   //subtract one from remaining turns
+  remainingTurns--;
+  console.log("Remaining turns: " + remainingTurns);
+
+  //update the array of rows with the player value
+  if (this.id == "a1") rowA[0] = currentTurn;
+  else if (this.id == "a2") rowA[1] = currentTurn;
+  else if (this.id == "a3") rowA[2] = currentTurn;
+  else if (this.id == "b1") rowB[0] = currentTurn;
+  else if (this.id == "b2") rowB[1] = currentTurn;
+  else if (this.id == "b3") rowB[2] = currentTurn;
+  else if (this.id == "c1") rowC[0] = currentTurn;
+  else if (this.id == "c2") rowC[1] = currentTurn;
+  else if (this.id == "c3") rowC[2] = currentTurn;
+
+  // output arrays to console
+  console.log ("Rows:");
+  console.log (rowA);
+  console.log (rowB);
+  console.log (rowC);
+
+
+// get a handle on the DOM element to be updated with the outcome
+let gameOutputMsg = document.querySelector("#gameResult");
+
+
+// call your function checkGameboard() with the 3 rows
+let winState = checkGameboard(rowA, rowB, rowC);
+
+// test the returned value of the function
+if (winState == "x") { 
+  gameOutputMsg.innerHTML = "X wins";
+  gameOver = true;
+  
+} else if (winState == "o") {
+  gameOutputMsg.innerHTML = "O wins";
+  gameOver = true;
+  
+} else if (winState == "d") && (remainingTurns == 0) {
+  gameOutputMsg.innerHTML = "draw";
+  gameOver = true;
+  
+}
+
+// reveal game outcome if game is over
+if (gameOver) {
+  document.querySelector("#gameResult").style.display = "block";
+
 
   //flip turn back and forth
   if (currentTurn === "x") currentTurn = "o";
@@ -94,28 +150,4 @@ document.addEventListener("DOMContentLoaded", function() {
   currentPlayer = document.querySelector("#currentPlayer span");
 currentPlayer.innerHTML = currentTurn;
 });
-
-/* COMMENT OUT EVERYTHING BELOW THIS
-
-// get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult span");
-
-
-// call your function checkGameboard() with the 3 rows
-let winState = checkGameboard(rowA, rowB, rowC);
-
-// test the returned value of the function
-if (winState == "x") { 
-  gameOutputMsg.innerHTML = "X wins";
-  
-} else if (winState == "o") {
-  gameOutputMsg.innerHTML = "O wins";
-  
-} else if (winState == "d") {
-  gameOutputMsg.innerHTML = "draw";
-  
-} else {
-  gameOutputMsg.innerHTML = "unknown";
 }
-
-*/
