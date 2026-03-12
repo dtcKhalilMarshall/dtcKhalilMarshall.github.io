@@ -1,78 +1,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink&display=swap");
 
 :root {
-  --gameBoard-size: 80vh;
+  --cell-size: 80px; /* size of each box*/
 }
 
+/* Body styles */
 body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
-  position: relative;
 }
 
+/* Turn indicator */
 #nextPlayer {
-  font-family: "Bitcount Prop Double Ink", sans-serif;
+  font-family: "Bitcount Prop Double Ink", cursive;
   font-size: 2rem;
   margin-bottom: 10px;
+  padding: 10px 20px;
+  border: 2px solid #800080;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
 #gameResult {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 0; left: 0;
   display: none;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; height: 100vh;
   background-color: rgba(128, 0, 128, 0.8);
-  color: white;
+  color: #fff;
+  font-family: "Bitcount Prop Double Ink", cursive;
   font-size: 3rem;
-  font-family: "Bitcount Prop Double Ink", sans-serif;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
   padding: 20px;
-  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Style for game board grid */
+/* Style for the game board container */
 #gameBoard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: var(--gameBoard-size);
-  height: var(--gameBoard-size);
-  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   background-color: black;
-  margin-top: 20px;
-  border: 2px solid black;
+  border: 4px solid #800080;
+  border-radius: 8px;
+  padding: 4px;
 }
 
+/* Style each row to be flex containers */
 .row {
   display: flex;
+  gap: 4px;
 }
 
+/* Style each game space (cell) */
 .gameSpace {
+  width: var(--cell-size);
+  height: var(--cell-size);
   background-color: white;
-  font-family: "Bitcount Prop Double Ink", sans-serif;
-  font-size: 3rem;
+  font-family: "Bitcount Prop Double Ink", cursive;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #800080;
-  flex: 1;
   cursor: pointer;
   user-select: none;
-  height: 100%;
-  width: 100%;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .gameSpace:hover {
   background-color: #eeabff;
+  transform: scale(1.05);
 }
 
 .gameSpace.clicked {
@@ -80,10 +84,22 @@ body {
   background-color: #ddd;
 }
 
-/* Reset Button to reset lol*/
+/* Style for the Reset Button */
 #resetButton {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 15px 30px; /* larger size */
+  font-family: "Bitcount Prop Double Ink", cursive;
+  font-size: 1.2rem; /* bigger font */
+  background-color: #ffffff; /* bright red for visibility */
+  color: #fff; /* white text */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#resetButton:hover {
+  background-color: #4d005f; /* darker red on hover */
+  transform: scale(1.05); /* slight enlarging effect on hover */
 }
