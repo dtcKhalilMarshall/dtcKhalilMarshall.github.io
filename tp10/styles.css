@@ -4,6 +4,42 @@
   --gameBoard-size: 80vh;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+
+#nextPlayer {
+  font-family: "Bitcount Prop Double Ink", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#gameResult {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 0, 128, 0.8);
+  color: white;
+  font-size: 3rem;
+  font-family: "Bitcount Prop Double Ink", sans-serif;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style for game board grid */
 #gameBoard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,8 +48,12 @@
   height: var(--gameBoard-size);
   gap: 2px;
   background-color: black;
-  margin: auto;
   margin-top: 20px;
+  border: 2px solid black;
+}
+
+.row {
+  display: flex;
 }
 
 .gameSpace {
@@ -24,28 +64,26 @@
   align-items: center;
   justify-content: center;
   border: 2px solid #800080;
-  box-sizing: border-box;
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+  height: 100%;
+  width: 100%;
 }
 
 .gameSpace:hover {
   background-color: #eeabff;
+}
+
+.gameSpace.clicked {
+  cursor: default;
+  background-color: #ddd;
+}
+
+/* Reset Button to reset lol*/
+#resetButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
-}
-
-.gameSpace.clicked:hover {
-  background-color:white;
-}
-
-#gameResult {
-  position: absolute;
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  background-color: #800080;
-  color: white;
-  font-size: 3rem;
-  font-family: "Bitcount Prop Double Ink", sans-serif;
-  text-align: center;
-  z-index: 1;
-
 }
