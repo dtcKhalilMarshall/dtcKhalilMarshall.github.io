@@ -1,129 +1,87 @@
-// ****** (^v^) hi!
-// Game state variables
+// Initialize game state arrays
 let rowA = ["-", "-", "-"];
 let rowB = ["-", "-", "-"];
 let rowC = ["-", "-", "-"];
 
-let currentTurn = "x";
-let remainingTurns = 9;
+let currentPlayerSymbol = "X"; // X starts
 let gameOver = false;
 
-let currentPlayer; // DOM element for displaying current player
+const currentPlayerSpan = document.querySelector("#nextPlayer span");
+currentPlayerSpan.innerHTML = currentPlayerSymbol;
 
-// Function to check for winner or draw
 function checkGameboard(rowA, rowB, rowC) {
+  // Your existing implementation here
   function checkLine(a, b, c) {
     if (a === b && b === c && a !== "-") {
       return a;
     }
     return false;
   }
-
   // Check columns
-  for (let i = 0; i < 3; i++) {
-    const winner = checkLine(rowA[i], rowB[i], rowC[i]);
-    if (winner) return winner;
+  for (let i=0; i<3; i++) {
+    const colWin = checkLine(rowA[i], rowB[i], rowC[i]);
+    if (colWin) return colWin;
   }
-
   // Check rows
   if (checkLine(rowA[0], rowA[1], rowA[2])) return checkLine(rowA[0], rowA[1], rowA[2]);
   if (checkLine(rowB[0], rowB[1], rowB[2])) return checkLine(rowB[0], rowB[1], rowB[2]);
   if (checkLine(rowC[0], rowC[1], rowC[2])) return checkLine(rowC[0], rowC[1], rowC[2]);
-
   // Check diagonals
   if (checkLine(rowA[0], rowB[1], rowC[2])) return checkLine(rowA[0], rowB[1], rowC[2]);
   if (checkLine(rowC[0], rowB[1], rowA[2])) return checkLine(rowC[0], rowB[1], rowA[2]);
-
   // Check draw
   const allCells = [...rowA, ...rowB, ...rowC];
-  if (!allCells.includes("-")) {
-    return "d";
-  }
-
+  if (!allCells.includes("-")) return "d";
   return false;
 }
 
-// Function to handle square clicks
-function clickSquare() {
+function handleCellClick() {
   if (this.innerHTML === "" && !gameOver) {
-    this.innerHTML = currentTurn;
+    this.innerHTML = currentPlayerSymbol;
     this.classList.add("clicked");
-
-    // Map element IDs to array positions
     const idMap = {
-      a1: [rowA, 0],
-      a2: [rowA, 1],
-      a3: [rowA, 2],
-      b1: [rowB, 0],
-      b2: [rowB, 1],
-      b3: [rowB, 2],
-      c1: [rowC, 0],
-      c2: [rowC, 1],
-      c3: [rowC, 2],
+      a1: [rowA, 0], a2: [rowA, 1], a3: [rowA, 2],
+      b1: [rowB, 0], b2: [rowB, 1], b3: [rowB, 2],
+      c1: [rowC, 0], c2: [rowC, 1], c3: [rowC, 2],
     };
     const [rowRef, index] = idMap[this.id];
-    rowRef[index] = currentTurn;
-
-    remainingTurns--;
-
-    // Check game status
-    const gameOutputMsg = document.querySelector("#gameResult");
-    let winState = checkGameboard(rowA, rowB, rowC);
-
-    if (winState === "x" || winState === "o") {
-      gameOutputMsg.innerHTML = (winState.toUpperCase() + " wins!");
+    rowRef[index] = currentPlayerSymbol;
+    const resultDiv = document.querySelector("#gameResult");
+    const winner = checkGameboard(rowA, rowB, rowC);
+    if (winner === "X" || winner === "O") {
+      resultDiv.innerHTML = `<div style="font-size: 4rem;">Player ${winner} WINS!</div>`;
+      resultDiv.style.display = "flex";
       gameOver = true;
-    } else if (winState === "d") {
-      gameOutputMsg.innerHTML = "It's a draw!";
+    } else if (winner === "d") {
+      resultDiv.innerHTML = `<div style="font-size: 4rem;">It's a Draw!</div>`;
+      resultDiv.style.display = "flex";
       gameOver = true;
-    }
-
-    if (gameOver) {
-      document.querySelector("#gameResult").style.display = "flex";
     } else {
-      // Switch turns
-      currentTurn = currentTurn === "x" ? "o" : "x";
-      currentPlayer.innerHTML = currentTurn;
+      currentPlayerSymbol = currentPlayerSymbol === "X" ? "O" : "X";
+      currentPlayerSpan.innerHTML = currentPlayerSymbol;
     }
   }
 }
 
-// Function to reset the game
 function resetGame() {
   rowA = ["-", "-", "-"];
   rowB = ["-", "-", "-"];
   rowC = ["-", "-", "-"];
-
-  currentTurn = "x";
-  remainingTurns = 9;
+  currentPlayerSymbol = "X";
   gameOver = false;
-
-  // Clear UI board
-  document.querySelectorAll(".gameSpace").forEach(space => {
-    space.innerHTML = "";
-    space.classList.remove("clicked");
+  document.querySelectorAll(".gameSpace").forEach(cell => {
+    cell.innerHTML = "";
+    cell.classList.remove("clicked");
   });
-
-  // Hide game result message
-  const gameOutputMsg = document.querySelector("#gameResult");
-  gameOutputMsg.innerHTML = "";
-  gameOutputMsg.style.display = "none";
-
-  // Reset current player display
-  currentPlayer.innerHTML = currentTurn;
+  document.querySelector("#gameResult").style.display = "none";
+  currentPlayerSpan.innerHTML = currentPlayerSymbol;
 }
 
-// Initialize game on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  // Set current player display
-  currentPlayer = document.querySelector("#nextPlayer span");
-  currentPlayer.innerHTML = currentTurn;
-
-  // Add click event to each game space
   document.querySelectorAll(".gameSpace").forEach(space => {
-    space.addEventListener("click", clickSquare);
+    space.addEventListener("click", handleCellClick);
   });
-
-  // Add reset button event
   document.querySelector("#resetButton").addEventListener("click", resetGame);
+  // Set initial turn display
+  currentPlayerSpan.innerHTML = currentPlayerSymbol;
 });
