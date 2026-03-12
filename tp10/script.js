@@ -1,3 +1,4 @@
+// ****** (^v^) hi! I'm Khalil and Welcome to my JavaScript!
 // Initialize game state arrays
 let rowA = ["-", "-", "-"];
 let rowB = ["-", "-", "-"];
@@ -112,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add click listener to reset button
   document.querySelector("#resetButton").addEventListener("click", resetGame);
 
-  // Optional: Add click on overlay to restart game
+  // Add click on overlay to reset game
   resultDiv.addEventListener("click", () => {
     resetGame();
   });
