@@ -1,1 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink&display=swap");
 
+:root {
+  --gameBoard-size: 80vh;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: var(--gameBoard-size);
+  height: var(--gameBoard-size);
+  gap: 2px;
+  background-color: black;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.gameSpace {
+  background-color: white;
+  font-family: "Bitcount Prop Double Ink", sans-serif;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #800080;
+  box-sizing: border-box;
+}
+
+.gameSpace:hover {
+  background-color: #eeabff;
+  cursor: pointer;
+}
+
+.gameSpace.clicked:hover {
+  background-color:white;
+}
+
+#gameResult {
+  position: absolute;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: #800080;
+  color: white;
+  font-size: 3rem;
+  font-family: "Bitcount Prop Double Ink", sans-serif;
+  text-align: center;
+  z-index: 1;
+
+}
