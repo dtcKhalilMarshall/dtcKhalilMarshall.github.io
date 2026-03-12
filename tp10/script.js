@@ -3,6 +3,13 @@ let rowA = [ "-", "-", "-" ];
 let rowB = [ "-", "-", "-" ];
 let rowC = [ "-", "-", "-" ];
 
+// track whos turn it is
+let currentTurn = "x";
+
+// set up blank variable for current player DOM element
+let currentPlayer;
+
+
 function checkGameboard(rowA, rowB, rowC) {
   function checkLine(a, b, c) {
     console.log(`Checking line: ${a}, ${b}, ${c}`);
@@ -53,18 +60,39 @@ function checkGameboard(rowA, rowB, rowC) {
   console.log("Draw detected");
 }
 
+//function to handle clicks
+function clickSquare() {
+
+ // only proceed if space is empty
+ if (this.innerHTML ==""){
+
+  //set space
+  this.innerHTML = currentTurn;
+
+  //flip turn back and forth
+  if (currentTurn === "x") currentTurn = "o";
+  else currentTurn = "x";
+
+// update next player DOM element
+currentPlayer.innerHTML = currentTurn;
+
+ }
+  
+}
+
 // wait for document to load before adding clickable event
 document.addEventListener("DOMContentLoaded", function() {
 
    // find all the clickable spaces
    let allSpaces = document.querySelectorAll(".gameSpace");
- for(x=0; x < allSpaces.length; x++) {
-  allSpaces[x].addEventListener("click", function() {
-this.innerHTML = "x";
-});
 
- }
+ for (let eachSpace of allSpaces) {
+  eachSpace.addEventListener("click", clickSquare); 
+  }
 
+  //update current player DOM element with first player
+  currentPlayer = document.querySelector("#currentPlayer span");
+currentPlayer.innerHTML = currentTurn;
 });
 
 /* COMMENT OUT EVERYTHING BELOW THIS
