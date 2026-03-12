@@ -1,37 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double+Ink&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 :root {
-  --cell-size: 80px; /* size of each box*/
+  --cell-size: 80px;
 }
 
 /* Body styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
+  background-color: #993399; 
 }
 
 /* Turn indicator */
 #nextPlayer {
-  font-family: "Bitcount Prop Double Ink", cursive;
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 2rem;
   margin-bottom: 10px;
   padding: 10px 20px;
   border: 2px solid #800080;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: #993399;
+  color: #6e016e;
 }
 
+/* Game result overlay */
 #gameResult {
   position: fixed;
-  top: 0; left: 0;
-  display: none;
-  width: 100vw; height: 100vh;
-  background-color: rgba(128, 0, 128, 0.8);
-  color: #fff;
-  font-family: "Bitcount Prop Double Ink", cursive;
+  top: 0; 
+  left: 0;
+  display: none; /* initially hidden */
+  width: 100vw; 
+  height: 100vh;
+  background-color: #7c017ccc;
+  color: #6e016e;
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 3rem;
   display: flex;
   justify-content: center;
@@ -39,6 +44,7 @@ body {
   z-index: 10;
   padding: 20px;
   text-align: center;
+  cursor: pointer; /* indicate clickable overlay */
 }
 
 /* Style for the game board container */
@@ -46,7 +52,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background-color: black;
+  background-color: #5e1d5e;
   border: 4px solid #800080;
   border-radius: 8px;
   padding: 4px;
@@ -58,12 +64,12 @@ body {
   gap: 4px;
 }
 
-/* Style each game space (cell) */
+/* Style each game space (cell) - only change background-color here */
 .gameSpace {
   width: var(--cell-size);
   height: var(--cell-size);
-  background-color: white;
-  font-family: "Bitcount Prop Double Ink", cursive;
+  background-color: #993399; 
+  font-family: 'Pixelify Sans', sans-serif;
   font-size: 2.5rem;
   display: flex;
   align-items: center;
@@ -72,34 +78,42 @@ body {
   cursor: pointer;
   user-select: none;
   transition: background-color 0.2s, transform 0.1s;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  color: #6e016e;
 }
 
+/* Hover effect for cells */
 .gameSpace:hover {
-  background-color: #eeabff;
+  background-color: #b30cb3; /* slightly darker for hover */
   transform: scale(1.05);
 }
 
+/* Style for clicked cells to prevent further interaction and indicate they are taken */
 .gameSpace.clicked {
   cursor: default;
-  background-color: #ddd;
+  background-color: #af52af;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  color: #6e016e;
 }
 
 /* Style for the Reset Button */
 #resetButton {
   margin-top: 20px;
-  padding: 15px 30px; /* larger size */
-  font-family: "Bitcount Prop Double Ink", cursive;
-  font-size: 1.2rem; /* bigger font */
-  background-color: #ffffff; /* bright red for visibility */
-  color: #fff; /* white text */
+  padding: 15px 30px; 
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 1.2rem; 
+  background-color: #993399; 
+  color: #6e016e;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
+/* Hover effect for reset button */
 #resetButton:hover {
-  background-color: #4d005f; /* darker red on hover */
-  transform: scale(1.05); /* slight enlarging effect on hover */
+  background-color: #af52af; /* light purple on hover */
+  color: #6e016e; 
+  transform: scale(1.05);
 }
