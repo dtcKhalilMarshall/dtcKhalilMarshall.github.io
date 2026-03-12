@@ -1,3 +1,4 @@
+/* // ****** (^v^) hi! I'm Khalil and Welcome to my CSS */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 :root {
@@ -58,13 +59,13 @@ body {
   padding: 4px;
 }
 
-/* Style each row to be flex containers */
+/* Style each row */
 .row {
   display: flex;
   gap: 4px;
 }
 
-/* Style each game space (cell) - only change background-color here */
+/* Style each game space */
 .gameSpace {
   width: var(--cell-size);
   height: var(--cell-size);
