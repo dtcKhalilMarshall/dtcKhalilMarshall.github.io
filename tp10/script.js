@@ -1,153 +1,129 @@
 // ****** (^v^) hi!
-let rowA = [ "-", "-", "-" ];
-let rowB = [ "-", "-", "-" ];
-let rowC = [ "-", "-", "-" ];
+// Game state variables
+let rowA = ["-", "-", "-"];
+let rowB = ["-", "-", "-"];
+let rowC = ["-", "-", "-"];
 
-// track whos turn it is
 let currentTurn = "x";
-
-//track number of turns left
 let remainingTurns = 9;
-
-// track if game is over
 let gameOver = false;
 
-// set up blank variable for current player DOM element
-let currentPlayer;
+let currentPlayer; // DOM element for displaying current player
 
-
+// Function to check for winner or draw
 function checkGameboard(rowA, rowB, rowC) {
   function checkLine(a, b, c) {
-    console.log(`Checking line: ${a}, ${b}, ${c}`);
     if (a === b && b === c && a !== "-") {
-      console.log(`Found winner in line: ${a}`);
       return a;
     }
     return false;
   }
 
+  // Check columns
   for (let i = 0; i < 3; i++) {
     const winner = checkLine(rowA[i], rowB[i], rowC[i]);
-    if (winner) {
-      console.log(`Winner found in column ${i}: ${winner}`);
-      return winner;
-    }
+    if (winner) return winner;
   }
 
-  if (checkLine(rowA[0], rowA[1], rowA[2])) {
-    console.log("Winner in row A");
-    return checkLine(rowA[0], rowA[1], rowA[2]);
-  }
-  if (checkLine(rowB[0], rowB[1], rowB[2])) {
-    console.log("Winner in row B");
-    return checkLine(rowB[0], rowB[1], rowB[2]);
-  }
-  if (checkLine(rowC[0], rowC[1], rowC[2])) {
-    console.log("Winner in row C");
-    return checkLine(rowC[0], rowC[1], rowC[2]);
-  }
+  // Check rows
+  if (checkLine(rowA[0], rowA[1], rowA[2])) return checkLine(rowA[0], rowA[1], rowA[2]);
+  if (checkLine(rowB[0], rowB[1], rowB[2])) return checkLine(rowB[0], rowB[1], rowB[2]);
+  if (checkLine(rowC[0], rowC[1], rowC[2])) return checkLine(rowC[0], rowC[1], rowC[2]);
 
-  if (checkLine(rowA[0], rowB[1], rowC[2])) {
-    console.log("Winner in diagonal A0-B1-C2");
-    return checkLine(rowA[0], rowB[1], rowC[2]);
-  }
-  if (checkLine(rowC[0], rowB[1], rowA[2])) {
-    console.log("Winner in diagonal C0-B1-A2");
-    return checkLine(rowC[0], rowB[1], rowA[2]);
-  }
+  // Check diagonals
+  if (checkLine(rowA[0], rowB[1], rowC[2])) return checkLine(rowA[0], rowB[1], rowC[2]);
+  if (checkLine(rowC[0], rowB[1], rowA[2])) return checkLine(rowC[0], rowB[1], rowA[2]);
 
+  // Check draw
   const allCells = [...rowA, ...rowB, ...rowC];
-  console.log(`All cells: ${allCells.join(", ")}`);
   if (!allCells.includes("-")) {
-    console.log("DRAW!!!");
     return "d";
   }
 
-  console.log("Draw detected");
+  return false;
 }
 
-//function to handle clicks
+// Function to handle square clicks
 function clickSquare() {
+  if (this.innerHTML === "" && !gameOver) {
+    this.innerHTML = currentTurn;
+    this.classList.add("clicked");
 
- // only proceed if space is empty
- if ( (this.innerHTML =="") && (!gameOver) ) {
+    // Map element IDs to array positions
+    const idMap = {
+      a1: [rowA, 0],
+      a2: [rowA, 1],
+      a3: [rowA, 2],
+      b1: [rowB, 0],
+      b2: [rowB, 1],
+      b3: [rowB, 2],
+      c1: [rowC, 0],
+      c2: [rowC, 1],
+      c3: [rowC, 2],
+    };
+    const [rowRef, index] = idMap[this.id];
+    rowRef[index] = currentTurn;
 
-  //set space
-  this.innerHTML = currentTurn;
-  this.classList.add("clicked");
+    remainingTurns--;
 
-   //subtract one from remaining turns
-  remainingTurns--;
-  console.log("Remaining turns: " + remainingTurns);
+    // Check game status
+    const gameOutputMsg = document.querySelector("#gameResult");
+    let winState = checkGameboard(rowA, rowB, rowC);
 
-  //update the array of rows with the player value
-  if (this.id == "a1") rowA[0] = currentTurn;
-  else if (this.id == "a2") rowA[1] = currentTurn;
-  else if (this.id == "a3") rowA[2] = currentTurn;
-  else if (this.id == "b1") rowB[0] = currentTurn;
-  else if (this.id == "b2") rowB[1] = currentTurn;
-  else if (this.id == "b3") rowB[2] = currentTurn;
-  else if (this.id == "c1") rowC[0] = currentTurn;
-  else if (this.id == "c2") rowC[1] = currentTurn;
-  else if (this.id == "c3") rowC[2] = currentTurn;
+    if (winState === "x" || winState === "o") {
+      gameOutputMsg.innerHTML = (winState.toUpperCase() + " wins!");
+      gameOver = true;
+    } else if (winState === "d") {
+      gameOutputMsg.innerHTML = "It's a draw!";
+      gameOver = true;
+    }
 
-  // output arrays to console
-  console.log ("Rows:");
-  console.log (rowA);
-  console.log (rowB);
-  console.log (rowC);
-
-
-// get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult");
-
-
-// call your function checkGameboard() with the 3 rows
-let winState = checkGameboard(rowA, rowB, rowC);
-
-// test the returned value of the function
-if (winState == "x") { 
-  gameOutputMsg.innerHTML = "X wins";
-  gameOver = true;
-  
-} else if (winState == "o") {
-  gameOutputMsg.innerHTML = "O wins";
-  gameOver = true;
-  
-} else if (winState == "d") && (remainingTurns == 0) {
-  gameOutputMsg.innerHTML = "draw";
-  gameOver = true;
-  
-}
-
-// reveal game outcome if game is over
-if (gameOver) {
-  document.querySelector("#gameResult").style.display = "block";
-
-
-  //flip turn back and forth
-  if (currentTurn === "x") currentTurn = "o";
-  else currentTurn = "x";
-
-// update next player DOM element
-currentPlayer.innerHTML = currentTurn;
-
- }
-  
-}
-
-// wait for document to load before adding clickable event
-document.addEventListener("DOMContentLoaded", function() {
-
-   // find all the clickable spaces
-   let allSpaces = document.querySelectorAll(".gameSpace");
-
- for (let eachSpace of allSpaces) {
-  eachSpace.addEventListener("click", clickSquare); 
+    if (gameOver) {
+      document.querySelector("#gameResult").style.display = "flex";
+    } else {
+      // Switch turns
+      currentTurn = currentTurn === "x" ? "o" : "x";
+      currentPlayer.innerHTML = currentTurn;
+    }
   }
-
-  //update current player DOM element with first player
-  currentPlayer = document.querySelector("#currentPlayer span");
-currentPlayer.innerHTML = currentTurn;
-});
 }
+
+// Function to reset the game
+function resetGame() {
+  rowA = ["-", "-", "-"];
+  rowB = ["-", "-", "-"];
+  rowC = ["-", "-", "-"];
+
+  currentTurn = "x";
+  remainingTurns = 9;
+  gameOver = false;
+
+  // Clear UI board
+  document.querySelectorAll(".gameSpace").forEach(space => {
+    space.innerHTML = "";
+    space.classList.remove("clicked");
+  });
+
+  // Hide game result message
+  const gameOutputMsg = document.querySelector("#gameResult");
+  gameOutputMsg.innerHTML = "";
+  gameOutputMsg.style.display = "none";
+
+  // Reset current player display
+  currentPlayer.innerHTML = currentTurn;
+}
+
+// Initialize game on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  // Set current player display
+  currentPlayer = document.querySelector("#nextPlayer span");
+  currentPlayer.innerHTML = currentTurn;
+
+  // Add click event to each game space
+  document.querySelectorAll(".gameSpace").forEach(space => {
+    space.addEventListener("click", clickSquare);
+  });
+
+  // Add reset button event
+  document.querySelector("#resetButton").addEventListener("click", resetGame);
+});
