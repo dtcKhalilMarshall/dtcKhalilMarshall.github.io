@@ -15,45 +15,45 @@ body {
   box-sizing: border-box;
 }
 
+/* Variables for sizing */
 :root {
-  --boardWidth: 100vw; /* variable for overall board dimenstions */
+  --boardWidth: 100vw; /* overall board width */
   --boardGap: 1vw;
-  --cardSize: calc( (var(--boardWidth) - var(--boardGap))); /* variable for card dimensions */
-  --timeDelay: 2s
+  --cardSize: calc( (var(--boardWidth) - var(--boardGap)) / 4 - 1vw); /* card size adjusted for grid */
+  --timeDelay: 2s;
 }
 
-/****************************** general card styling */
-
+/* Style for the concentration cards */
 .card {
   position: relative;
   width: var(--cardSize);
   height: var(--cardSize);
-  perspective: 500px; /* special CSS property relevant to 3D flips */
+  perspective: 500px; /* for 3D flip effect */
   margin-bottom: 1rem;
   transition: opacity 1s;
 }
 
 .cardContent {
-  position: absolute; /* positioning within the parent card object */
+  position: absolute;
   width: 100%;
   height: 100%;
   transition: transform 0.5s;
-  transform-style: preserve-3d; /* special CSS property relevant to 3D flips */
+  transform-style: preserve-3d;
 }
 
 .card.clicked .cardContent {
-  transform: rotateY(180deg); /* simulate a 3D flip */
+  transform: rotateY(180deg);
 }
 
 .cardTop,
 .cardBottom {
-  position: absolute; /* positioning within the parent cardContent object */
+  position: absolute;
   text-align: center;
   height: 100%;
   width: 100%;
   border: 2px solid darkblue;
   font-size: 42px;
-  backface-visibility: hidden; /* special CSS property relevant to 3D flips */
+  backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,94 +70,169 @@ body {
 .cardBottom {
   background-color: #eee;
   color: darkblue;
-  transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+  transform: rotateY(180deg); /* pre-flip to show on flip */
 }
 
+/* Styles for matched cards to fade out */
 .matched {
   opacity: 0;
   transition-delay: var(--timeDelay);
 }
 
-/****************************** specific card styling */
-
-
+/* Specific backgrounds for card pairs */
 .pair1 .cardBottom {
   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:94fb9b46-8a69-4569-9a3f-893dea5e491b?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
-
 }
-
-
-
 .pair2 .cardBottom {
-background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:bd09be5c-2d6a-4b82-ba32-fd8aabac45ec?quality=0.7&gen=ntrn&format=jpg&width=1200&height=630&crop=true');
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:bd09be5c-2d6a-4b82-ba32-fd8aabac45ec?quality=0.7&gen=ntrn&format=jpg&width=1200&height=630&crop=true');
   background-size: cover;
   background-position: center;
 }
-
-
-
 .pair3 .cardBottom {
   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:afc88614-4494-4e11-8b56-ae41cd042eca?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
 }
-
-
 .pair4 .cardBottom {
   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:9a69c9f1-8a8b-46e5-a02c-b0f1087d6543?quality=0.7&gen=ntrn&format=jpg&width=1200&height=630&crop=true');
   background-size: cover;
   background-position: center;
 }
-
-
-
 .pair5 .cardBottom {
-   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:1d8c4c5e-269e-4e74-bea3-a24b60b99633?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:1d8c4c5e-269e-4e74-bea3-a24b60b99633?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
 }
-
-
-
 .pair6 .cardBottom {
- background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:8323c384-b576-4e71-acba-42a2ecf69a3a?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:8323c384-b576-4e71-acba-42a2ecf69a3a?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
 }
-
-
-
 .pair7 .cardBottom {
-   background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:7a8685b3-527c-4078-b89f-aef0bf6d0801?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
+  background-image: url('https://assets.nick.com/uri/mgid:arc:imageassetref:ws.kids.com:7a8685b3-527c-4078-b89f-aef0bf6d0801?quality=0.7&gen=ntrn&format=webp&crop=true&width=660');
   background-size: cover;
   background-position: center;
 }
-
-
 .pair8 .cardBottom {
-   background-image: url('https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_main_characters.png');
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_main_characters.png');
   background-size: cover;
   background-position: center;
 }
 
-/****************************** gameBoard formatting */
-
+/* Game board layout */
 #gameBoard {
-  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* Responsive layout for landscape orientation */
 @media screen and (orientation: landscape) {
   :root {
     --cardSize: 20vw;
   }
   #gameBoard {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
   }
+}
+
+/* To Display how many turns the player has made*/
+#turnCount {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  margin: 20px auto; /* center horizontally on page */
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 230px;
+  background-image: url('https://i.redd.it/i-m-a-g-i-n-a-t-i-o-n-v0-yf6dpq5l5ywd1.png?width=1420&format=png&auto=webp&s=f9e77256341d356102a288aad7b559a35c9554aa');
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  color: darkblue;
+  border: 2px solid rgb(0, 37, 139);
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Overlay covering entire screen */
+#winScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Container for the GIF and overlay button, relative for absolute positioning */
+#victoryContainer {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  justify-content: center; /* Center the GIF horizontally */
+  align-items: center; /* Center vertically if needed */
+}
+
+#victoryGif {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  border: 4px solid; /* define border width */
+  border-image: conic-gradient(
+    red, orange, yellow, green, rgb(0, 157, 255), rgb(170, 1, 212), violet, rgb(255, 0, 162)
+  ) 1; /* apply rainbow gradient */
+  box-shadow: 0 0 20px rgba(253, 235, 130, 0.7);
+}
+
+
+/* Overlay container for "Play Again" button */
+#playAgainOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /* Center content */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allows clicks to pass through if needed */
+}
+
+/* Smaller style for the "Play Again" button with text shadow */
+#playAgainOverlay button {
+  padding: 8px 16px;
+  font-size: 1.1em;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', cursive, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6ec4, #7873f5);
+  background-size: 200% 200%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Slightly enlarge and glow on hover for effect */
+#playAgainOverlay button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #ff6ec4, 0 0 15px #7873f5;
 }
