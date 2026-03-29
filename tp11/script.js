@@ -1,5 +1,3 @@
-// JavaScript for interactive Concentration game
-
 // Track number of turns
 let playerClicks = 0;
 let timeDelay = 2000; // in milliseconds
@@ -23,6 +21,7 @@ function clearClicks() {
     // player has matched all cards
     console.log("all cards matched, player has won");
     document.querySelector("#winning").innerHTML = "You won!";
+    showWinScreen();
   }
 }
 
@@ -61,11 +60,10 @@ function flipCard() {
   }
 }
 
-// Run this code when the DOM loads
-document.addEventListener("DOMContentLoaded", function(e) {
-  // get handles to game elements
-  let allCards = document.querySelectorAll(".card");
-  let gameboard = document.querySelector("#gameBoard");
+// When DOM loads
+document.addEventListener("DOMContentLoaded", () => {
+  const allCards = document.querySelectorAll(".card");
+  const gameboard = document.querySelector("#gameBoard");
 
   // shuffle the cards
   let cardsArray = Array.from(allCards);
@@ -82,32 +80,33 @@ document.addEventListener("DOMContentLoaded", function(e) {
   allCards.forEach(card => {
     card.addEventListener("click", flipCard);
   });
-
-  // Add reset button functionality
-  const resetBtn = document.createElement("button");
-  resetBtn.id = "resetButton";
-  resetBtn.innerText = "Reset Game";
-  document.body.appendChild(resetBtn);
-
-  resetBtn.addEventListener("click", () => {
-    // Reset game state
-    document.querySelector("#winning").innerHTML = "";
-    document.querySelector("#turnCount span").innerHTML = "0";
-    playerClicks = 0;
-    // Remove classes from cards
-    document.querySelectorAll(".card").forEach(card => {
-      card.classList.remove("clicked", "matched");
-    });
-    // Shuffle again
-    let cardsArray = Array.from(document.querySelectorAll(".card"));
-    for (let i = cardsArray.length - 1; i > 0; i--) {
-      const randNum = Math.floor(Math.random() * (i + 1));
-      [cardsArray[i], cardsArray[randNum]] = [cardsArray[randNum], cardsArray[i]];
-    }
-    // Append shuffled cards
-    const gameboard = document.querySelector("#gameBoard");
-    for (let card of cardsArray) {
-      gameboard.appendChild(card);
-    }
-  });
 });
+
+// Function to show win overlay
+function showWinScreen() {
+  document.getElementById("winScreen").style.display = "flex";
+}
+
+// Function to close win overlay
+function closeWinScreen() {
+  document.getElementById("winScreen").style.display = "none";
+  // Reset game state
+  document.querySelector("#winning").innerHTML = "";
+  document.querySelector("#turnCount span").innerHTML = "0";
+  playerClicks = 0;
+  // Remove classes from cards
+  document.querySelectorAll(".card").forEach(card => {
+    card.classList.remove("clicked", "matched");
+  });
+  // Shuffle again
+  const cards = Array.from(document.querySelectorAll(".card"));
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  // Append shuffled cards
+  const gameboard = document.querySelector("#gameBoard");
+  for (let card of cards) {
+    gameboard.appendChild(card);
+  }
+}
