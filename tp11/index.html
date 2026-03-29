@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
-    <!-- meta tags and title -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Concentration</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Concentration</title>
 
-    <!-- external CSS -->
-    <link rel="stylesheet" href="styles.css" media="all" />
+<!-- External CSS file -->
+<link rel="stylesheet" href="styles.css" media="all" />
 
-    <!-- external JavaScript -->
-    <script src="script.js" defer></script>
-
+<!-- External JavaScript file -->
+<script src="script.js" defer></script>
 </head>
 <body>
-    
-<div id="gameBoard">
 
+<div id="gameBoard">
   <!-- Pair 1 -->
   <div class="card pair1">
     <div class="cardContent">
@@ -129,14 +125,27 @@
       <div class="cardBottom"></div>
     </div>
   </div>
-
 </div>
 
+<!-- Turns display as an image -->
 <div id="turnCount">
-  <p>Turns: <span></span></p>
+  <p>Turns: <span>0</span></p>
 </div>
 
+<!-- "You won!" message -->
 <div id="winning"></div>
+
+<!-- Win overlay container -->
+<div id="winScreen">
+  <div id="victoryContainer">
+    <!-- Victory GIF -->
+    <img id="victoryGif" src="https://media1.tenor.com/m/UPW1-calBtQAAAAC/spongebob-victory.gif" alt="Victory!"/>
+    <!-- Overlay "Play Again" button -->
+    <div id="playAgainOverlay">
+      <button onclick="closeWinScreen()">PLAY AGAIN!!!</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
