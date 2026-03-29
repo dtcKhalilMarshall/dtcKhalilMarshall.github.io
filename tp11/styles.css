@@ -16,7 +16,10 @@ body {
 }
 
 :root {
-  --cardSize: 130px; /* variable for card dimensions */
+  --boardWidth: 100vw; /* variable for overall board dimenstions */
+  --boardGap: 1vw;
+  --cardSize: calc( (var(--boardWidth) - var(--boardGap))); /* variable for card dimensions */
+  --timeDelay: 2s
 }
 
 /****************************** general card styling */
@@ -27,6 +30,7 @@ body {
   height: var(--cardSize);
   perspective: 500px; /* special CSS property relevant to 3D flips */
   margin-bottom: 1rem;
+  transition: opacity 1s;
 }
 
 .cardContent {
@@ -37,7 +41,7 @@ body {
   transform-style: preserve-3d; /* special CSS property relevant to 3D flips */
 }
 
-.card:hover .cardContent {
+.card.clicked .cardContent {
   transform: rotateY(180deg); /* simulate a 3D flip */
 }
 
@@ -67,6 +71,11 @@ body {
   background-color: #eee;
   color: darkblue;
   transform: rotateY(180deg); /* pre-flip so it appears on parent's flip */
+}
+
+.matched {
+  opacity: 0;
+  transition-delay: var(--timeDelay);
 }
 
 /****************************** specific card styling */
