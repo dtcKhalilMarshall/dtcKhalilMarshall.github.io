@@ -157,7 +157,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   border: 2px solid rgb(0, 37, 139);
-  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
   font-size: 2rem;
   text-align: center;
 }
