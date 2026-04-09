@@ -101,7 +101,6 @@ main {
     justify-content: center; /* Center content horizontally */
 }
 
-/* Add humidity icon before humidity text and align vertically with text */
 #currentHumidity::before {
     content: "";
     display: inline-block;
@@ -149,7 +148,7 @@ main {
 #futureInfo {
     position: relative;
     grid-area: future;
-    background-color: #b7fdfd;
+    background-color: #bbfdfd;
     overflow: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -207,7 +206,6 @@ main {
     margin-bottom: 10px; /* optional spacing below icon */
 }
 
-/* Add icon to the 2nd future day box */
 .futureDay:nth-child(2)::before {
     content: "";
     display: inline-block;
@@ -219,7 +217,6 @@ main {
     margin-bottom: 10px; /* optional spacing below icon */
 }
 
-/* Add icon to the 3rd future day box */
 .futureDay:nth-child(3)::before {
     content: "";
     display: inline-block;
@@ -229,6 +226,12 @@ main {
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 10px; /* optional spacing below icon */
+}
+
+/* To make hover effect apply to all childs of futureDay */
+.futureDay:hover {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
 /* Future forecast styling (landscape) */
