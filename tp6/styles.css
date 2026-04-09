@@ -17,8 +17,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Lobster Two', cursive;
-    background: linear-gradient(to bottom, #89f7fe, #66a6ff); /* subtle colorful background */
-    text-align: center; /* centers all text */
+    background: linear-gradient(to bottom, #89f7fe, #66a6ff);
+    text-align: center;
 }
 
 /* main layout */
@@ -170,15 +170,15 @@ main {
     position: absolute;
     width: var(--predictionBoxWidth);
     height: var(--predictionBoxHeight);
-    border: 2px solid #000; /* dark border */
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5); /* shadow for depth */
+    border: 2px solid #000;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
     padding: 0.5rem;
-    background-color: rgb(216, 252, 252); /* light color for clarity */
+    background-color: rgb(216, 252, 252);
     box-sizing: border-box;
-    border-radius: 10px; /* optional: slight rounding for a cleaner look */
+    border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
-    left: 50%; /* position in the center horizontally */
-    transform: translateX(-50%); /* shift back to center */
+    left: 50%;
+    transform: translateX(-50%);
 }
 .futureDay:hover {
     transform: translateX(-50%) translateY(-5px);
@@ -202,6 +202,30 @@ main {
     width: 50px; /* adjust size as needed */
     height: 50px; /* adjust size as needed */
     background-image: url('https://icons.veryicon.com/png/o/miscellaneous/my-project/sunny-weather-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 10px; /* optional spacing below icon */
+}
+
+/* Add icon to the 2nd future day box */
+.futureDay:nth-child(2)::before {
+    content: "";
+    display: inline-block;
+    width: 50px; /* adjust size as needed */
+    height: 50px; /* adjust size as needed */
+    background-image: url('https://cdn-icons-png.flaticon.com/512/606/606796.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 10px; /* optional spacing below icon */
+}
+
+/* Add icon to the 3rd future day box */
+.futureDay:nth-child(3)::before {
+    content: "";
+    display: inline-block;
+    width: 50px; /* adjust size as needed */
+    height: 50px; /* adjust size as needed */
+    background-image: url('https://icons.veryicon.com/png/o/miscellaneous/simple-linetype-icon/rain-23.png');
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 10px; /* optional spacing below icon */
