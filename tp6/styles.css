@@ -1,139 +1,229 @@
-
 /* styles for weather app */
 
-/* import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Dancing+Script:wght@400..700&family=Sofia&family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&display=swap');
+
+/**************************************** general layout */
+
+:root {
+    --predictionBoxWidth: 70vw;
+    --predictionBoxHeight: 20vh;
+}
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
- background-image: url;
- background-repeat:no-repeat;
- background-size:100% 100%;
- .averia-sans-libre-bold-italic 
-  font-family: "Averia Sans Libre", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lobster Two', cursive;
+    background: linear-gradient(to bottom, #89f7fe, #66a6ff); /* subtle colorful background */
+    text-align: center; /* centers all text */
 }
 
-/* weather cards grid */
-#weatherCards {
-	box-sizing: border-box;
-	position: relative;
-	display: grid;
-	margin-top: 0;
-	margin: 3vh;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	gap: 2em;
-	grid-auto-flow: row;
-	grid-template-areas:
-	". ."
-	". .";
+/* main layout */
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 231, 231);
+
+    display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 50vh 30vh var(--predictionBoxHeight);
+    grid-template-areas:
+        'currentInfo    currentInfo'
+        'currentHum     currentWind'
+        'future         future';
 }
 
-.card {
-    
-	font-size: 14px;
-	padding: 25px;
+/**************************************** current info */
+
+#currentInfo {
+    position: relative;
+    grid-area: currentInfo;
+    background-color: rgb(255, 227, 150);
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.card, .tempCard {
-	background: rgba(255, 255, 255, 0.1);
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	display: block;
-	border-radius: 10px;
-	text-transform: uppercase;
+/* Current temperature with a simple icon */
+#currentTemp {
+    position: absolute;
+    font-size: 5rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.tempCard {
-	width: auto;
-	margin: 3vh;
-	padding: 20px;
+/* Add a thermometer icon image before temperature */
+#currentTemp::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://img.icons8.com/ios-filled/50/000000/thermometer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#temperature {
-	font-size: 20px;
+/* Current condition with icon and text */
+#currentStatus {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#tempF {
-	font-size: 20px;
+/* Example condition icon inside #condition */
+#condition img {
+    width: 50px;
+    height: 50px;
 }
 
-#wind, #humidity, #cloudCover {
-	font-size: 20px;
+/**************************************** current humidity */
+
+#currentHumidity {
+    position: relative;
+    grid-area: currentHum;
+    background-color: lightblue;
+    border-bottom: 1px solid white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
 }
 
-#conditions {
-	font-size: 20px;
+/* Add humidity icon before humidity text and align vertically with text */
+#currentHumidity::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/219/219816.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
-/* modal styling */
-.hidden {
-	display: none;
+#currentHumidity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.modalContent {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: #fff;
-	color: #333;
-	padding: 20px;
-	border-radius: 10px;
-	width: 300px;
-	text-align: center;
-	box-shadow: 2px 2px 10px rgba(51, 51, 51, 0.1);
+/**************************************** current wind */
+
+#currentWind {
+    position: relative;
+    grid-area: currentWind;
+    background-color: rgb(216, 252, 252);
+    border-bottom: 1px solid white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    gap: 10px;
 }
 
-#modalCover {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(255,255,255,0.2);
-	backdrop-filter: blur(4px);
+#currentWind::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/54/54298.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-#openModal {
-	display: block;
-	margin: 25px auto;
+/**************************************** future prediction */
+
+#futureInfo {
+    position: relative;
+    grid-area: future;
+    background-color: #b7fdfd;
+    overflow: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-#submitLocation {
-	width: 100%;
-	margin-top: 20px;
+/* Hide scrollbar for Webkit browsers */
+#futureInfo::-webkit-scrollbar {
+    display: none;
 }
 
-.transparent-button {
-  background-color: transparent;
-  border: 1px solid black;
-  color: black; 
-  padding: 10px 20px; 
-  cursor: pointer;
+/* Forecast boxes as rectangles with dark borders and shadows, centered */
+.futureDay {
+    position: absolute;
+    width: var(--predictionBoxWidth);
+    height: var(--predictionBoxHeight);
+    border: 2px solid #000; /* dark border */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5); /* shadow for depth */
+    padding: 0.5rem;
+    background-color: rgb(216, 252, 252); /* light color for clarity */
+    box-sizing: border-box;
+    border-radius: 10px; /* optional: slight rounding for a cleaner look */
+    transition: transform 0.3s, box-shadow 0.3s;
+    left: 50%; /* position in the center horizontally */
+    transform: translateX(-50%); /* shift back to center */
+}
+.futureDay:hover {
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.6);
 }
 
-.transparent-button:hover {
-  background-color: #f0f0f0; 
-  border-color: #007bff; 
+/* Position forecast days */
+.futureDay:nth-child(2) {
+    left: calc(50% + var(--predictionBoxWidth));
+    transform: translateX(-50%);
+}
+.futureDay:nth-child(3) {
+    left: calc(50% + 2 * var(--predictionBoxWidth));
+    transform: translateX(-50%);
 }
 
-#locationDisplay {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	height: 8vh;
-	width: auto;
-	margin-top: 5vh;
-	font-size:16px;
+/* Add icon to the first future day box */
+.futureDay:first-child::before {
+    content: "";
+    display: inline-block;
+    width: 50px; /* adjust size as needed */
+    height: 50px; /* adjust size as needed */
+    background-image: url('https://icons.veryicon.com/png/o/miscellaneous/my-project/sunny-weather-1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 10px; /* optional spacing below icon */
 }
 
+/* Future forecast styling (landscape) */
+@media screen and (orientation: landscape) {
+    :root {
+        --predictionBoxWidth: 30vw;
+        --predictionBoxHeight: calc( 100vh / 3 );
+    }
 
+    main {
+        grid-template-columns: 60vw 40vw;
+        grid-template-rows: var(--predictionBoxHeight) var(--predictionBoxHeight) var(--predictionBoxHeight);
+        grid-template-areas:
+            'currentInfo    currentHum'
+            'currentInfo    currentWind'
+            'currentInfo    future';
+    }
+    #currentInfo {
+        border-bottom: none;
+        border-right: 1px solid rgb(255, 255, 255);
+    }
+}
