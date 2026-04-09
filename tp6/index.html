@@ -1,72 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	
-	<!-- meta tags and title -->
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Weather App</title>
 
-	<!-- external and internal CSS -->
-	<link rel="stylesheet" href="styles.css" media="all">
+    <!-- meta tags and title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiny Project 6: Weather App</title>
 
+    <!-- external and internal CSS -->
+    <link rel="stylesheet" href="styles.css" media="all">
 
-	<!-- external and internal JavaScript -->
-	<script src="scripts.js" defer></script>
-
+    <!-- external and internal JavaScript -->
+    <script src="scripts.js" defer></script>
 
 </head>
+
 <body>
 
-	<div class="tempCard">
-		<div><span id="tempF">0</span> °F</div>
-		<div id="temperature">Temperature</div>
-	</div>
+    <main>
+        <div id="currentInfo">
+            <div id="currentTemp">76°F</div>
+            <div id="currentStatus">Sunny</div>
+        </div>
 
-	<div id="weatherCards">
-		
-		<div class="card">
-			<p>Conditions</p>
-			<div id="conditions">Sunny</div>
-			<img src="" id="currentConditionsIcon">
-			<p style="color: #000000;">
-		</div>
+        <div id="currentHumidity">32%</div>
 
-		<div class="card">
-			<p>Wind</p>
-			<div><span id="wind">10</span> mph</div>
-		</div>
+        <div id="currentWind">3mph NNW</div>
 
-		<div class="card">
-			<p>Humidity</p>
-			<div id="humidity">10</div>
-		</div>
-
-		<div class="card">
-			<p>Cloud cover</p>
-			<div id="cloudCover">10</div>
-		</div>
-	</div>
-	<div id="locationDisplay">Current Location</div>
-
-	
-<button id="openModal">Change Current Location</button>
-
-	<div id="modalCover" class="hidden"></div>
-
-	<div id="locationModal" class="hidden">
-		<div class="modalContent">
-			<h2>Enter your ZIP Code or City, State</h2>
-			<input type="text" name="locationInput" id="locationInput" placeholder="Your Location">
-			<button id="submitLocation">Done</button>
-		</div>
-	</div>
-
-	
-
+        <div id="futureInfo">
+            <div class="futureDay">
+                <div class="futureTemp">78°F</div>
+                <div class="futureWind">4mph NW</div>
+                <div class="futureStatus">Sunny</div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp">74°F</div>
+                <div class="futureWind">6mph NW</div>
+                <div class="futureStatus">Cloudy</div>
+            </div>
+            <div class="futureDay">
+                <div class="futureTemp">77°F</div>
+                <div class="futureWind">7mph NW</div>
+                <div class="futureStatus">Rainy</div>
+            </div>
+        </div>
+    </main>
 
 
 </body>
+
 </html>
-
-
