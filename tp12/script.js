@@ -11,29 +11,30 @@ const weatherOptions = {
 	}
 };
 
-/* preparing variables for drag scrolling */
+// preparing variables
 let scrollingBox;
 let offsetLeftStart;
 let scrollLeftStart;
 let isMoving;
 
-/* function to get remote JSON data */
+// Function to get remote JSON data
 async function getData(url, options) {
   try {
     const response = await fetch(url, options);
     if (response.ok) {
       return await response.json();
     } else {
-      throw new Error(`Error: ${response.status}`);
+      throw response.status;
     }
   } catch (error) {
     console.error(error);
   }
 }
 
-/* update weather display in the DOM based on passed object */
+// update weather display in the DOM based on passed object
 function updateWeather(weatherObject) {
   if (!weatherObject) return;
+
   // update current weather temp, status, humidity
   document.querySelector("#currentTemp span").innerHTML = weatherObject.current.temp_f;
   document.querySelector("#currentStatus").innerHTML = weatherObject.current.condition.text;
@@ -42,6 +43,7 @@ function updateWeather(weatherObject) {
   // output wind speed and direction in a combined string
   const windspeed = weatherObject.current.wind_mph;
   const winddirection = weatherObject.current.wind_dir;
+  // FIX: Correct selector to match your HTML ID
   document.querySelector("#currentWind").innerHTML = `${windspeed} mph ${winddirection}`;
 
   // find all the future day blocks and loop through them, matching the forecast days in the weather object
@@ -57,43 +59,45 @@ function updateWeather(weatherObject) {
   }
 }
 
-/* wait for DOM to load */
-document.addEventListener("DOMContentLoaded", () => {
+// wait for DOM to load
+document.addEventListener("DOMContentLoaded", function () {
   // Get handle on the forecast container
   scrollingBox = document.querySelector("#futureInfo");
   isMoving = false;
 
   // Mouse down event
-  scrollingBox.addEventListener("mousedown", (e) => {
+  scrollingBox.addEventListener("mousedown", function (e) {
     scrollLeftStart = scrollingBox.scrollLeft;
     offsetLeftStart = e.pageX;
     isMoving = true;
   });
 
   // Mouse leave event
-  scrollingBox.addEventListener("mouseleave", () => {
+  scrollingBox.addEventListener("mouseleave", function () {
     isMoving = false;
   });
 
   // Mouse up event
-  scrollingBox.addEventListener("mouseup", () => {
+  scrollingBox.addEventListener("mouseup", function () {
     isMoving = false;
   });
 
   // Mouse move event
-  scrollingBox.addEventListener("mousemove", (e) => {
+  // FIX: Correct calculation for scrollLeft
+  scrollingBox.addEventListener("mousemove", function (e) {
     e.preventDefault();
     if (!isMoving) return;
+    // FIX: Removed unnecessary subtraction of scrollingBox.offsetLeft
     scrollingBox.scrollLeft = scrollLeftStart - (e.pageX - offsetLeftStart);
   });
 
   // Touch support for mobile devices
-  scrollingBox.addEventListener("touchstart", (e) => {
+  scrollingBox.addEventListener("touchstart", function (e) {
     scrollLeftStart = scrollingBox.scrollLeft;
     offsetLeftStart = e.touches[0].pageX;
     isMoving = true;
   });
-  scrollingBox.addEventListener("touchmove", (e) => {
+  scrollingBox.addEventListener("touchmove", function (e) {
     if (!isMoving) return;
     scrollingBox.scrollLeft = scrollLeftStart - (e.touches[0].pageX - offsetLeftStart);
   });
@@ -109,21 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Make the location button show the modal popup
+  // make the location button show the modal popups
   document.querySelector("#findLocation").addEventListener("click", () => {
     document.body.classList.toggle("showModal");
   });
 
-  // Handle form submit to get new location weather
+  // handle form submit for new location
   document.querySelector("#locationForm").addEventListener("submit", (event) => {
     event.preventDefault();
+
     document.body.classList.remove("showModal");
-    const newLocation = document.querySelector("#locationBox").value.trim();
-    if (!newLocation) return;
+    let newLocation = document.querySelector("#locationBox").value.trim();
+
     // adding the passed value to the weather URL for lookup
-    const weatherLookupURL = weatherUrl + encodeURIComponent(newLocation);
+    let weatherLookupURL = weatherUrl + encodeURIComponent(newLocation);
+
     // use the resulting location to look up weather
     getData(weatherLookupURL, weatherOptions).then((weatherResult) => {
+      console.log(weatherResult);
       updateWeather(weatherResult);
     });
   });
