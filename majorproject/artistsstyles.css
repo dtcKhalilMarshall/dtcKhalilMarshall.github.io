@@ -78,10 +78,11 @@ header h1 {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Artist image styling */
+/* Artist image styling - Consistent size */
 .artist-image {
-  width: 100%;
-  max-width: 200px;
+  width: 200px; /* fixed width for consistency */
+  height: 200px; /* fixed height for consistency */
+  object-fit: cover; /* ensures image covers the area without distortion */
   border-radius: 4px;
   border: 2px solid #d2691e;
   margin-bottom: 15px;
