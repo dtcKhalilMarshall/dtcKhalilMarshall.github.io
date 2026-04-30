@@ -111,8 +111,8 @@ header h1 {
   margin-top: 10px;
 }
 .icon-small {
-  width: 30px;
-  height: 30px;
+  width:20px;
+  height: 20px;
   object-fit: contain;
   border-radius: 3px;
   transition: transform 0.2s;
