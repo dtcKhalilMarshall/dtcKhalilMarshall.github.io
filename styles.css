@@ -1,5 +1,5 @@
- /* styles for reposityory homepage from TP2 */
- 
+/* styles for repository homepage from TP2 */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
@@ -9,43 +9,25 @@
 body {
     background-color: #cccccc;
     font-family: 'Playfair Display', serif;
-    font-weight:400;
+    font-weight: 400;
+    color: rgba(168, 191, 125, 0.934); 
 }
 
-h1,
-h2 {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+header h1,
+section h2,
+section h2::before,
+section h2::after,
+a {
+    color: #b6cf88;
 }
 
-h1 {
-    font-size: clamp(2rem, 8vw, 3.5rem);
-    line-height: 1.1em;
-    margin: 0;
-}
-
-h2 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-}
-
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-content: center;
-    align-items: start;
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-header,
-section {
-    min-height: 400px;
-    border-radius: 0.5rem;
-    padding: clamp(1.5rem, 4vw, 3rem);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 10px 20px rgba(0, 0, 0, 0.35), 0 15px 40px rgba(0, 0, 0, 0.45);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+:root {
+    --main-color: #636B2F;           
+    --dark-green: #4B5D2A;          
+    --light-green: #8AAE3D;          
+    --deep-green: #3B4E21;           
+    --muted-yellow-green: #A7C957;   
+    --light-lime: #D4E157;          
 }
 
 header {
@@ -53,8 +35,19 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #51a2bb 0%, #eeeeee 100%);
+    background: linear-gradient(
+        135deg,
+        #636B2F 0%,
+        #5A6A2A 50%,
+        #aec257 100%
+    );
     gap: 1.5rem;
+    border-radius: 0.5rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 
+                0 10px 20px rgba(0, 0, 0, 0.35), 
+                0 15px 40px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 header:hover {
@@ -64,20 +57,31 @@ header:hover {
 
 header h1 {
     text-align: center;
+    /* color: #fff;
 }
 
 section {
-    background: linear-gradient(135deg, #51a2bb 0%, #3a8aa3 100%);
+    min-height: 400px;
+    border-radius: 0.5rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: linear-gradient(
+        135deg,
+        #636B2F 0%,
+        #576629 50%,
+        #4B4E21 100%
+    );
     font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 section:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(81, 162, 187, 0.3);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 section h2 {
-    color: #000;
+    /* color: #fff; 
 }
 
 section h2::before {
@@ -93,6 +97,31 @@ section p {
     margin: 1rem 0;
 }
 
+ol {
+    list-style: none; 
+    counter-reset: custom-counter;
+    padding-left: 0; 
+}
+
+ol li {
+    counter-increment: custom-counter; 
+    position: relative;
+    padding-left: 2em; 
+    margin-bottom: 1rem; 
+    font-weight: 600;
+}
+
+ol li::before {
+    content: counter(custom-counter) ".";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #27340e; 
+    font-weight: bold;
+}
+
 #coolPic img {
     width: 100%;
     height: auto;
@@ -106,6 +135,16 @@ section p {
 
 #coolPic img:hover {
     filter: grayscale(50%) brightness(180%) contrast(180%);
+}
+
+a {
+    color: #e6f9c2;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--light-green);
 }
 
 @media (max-width: 768px) {
