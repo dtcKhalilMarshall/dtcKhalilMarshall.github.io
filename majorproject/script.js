@@ -52,47 +52,25 @@ const tracks = [
   { title: "Flo - Immature", url: "https://www.youtube.com/embed/cDEYI4sH4W4" }
 ];
 
-let currentIndex = 0;
-const container = document.getElementById('youtube-player');
-const nextBtn = document.getElementById('nextVideo');
-const prevBtn = document.getElementById('prevVideo');
+ let currentTrackIndex = 0;
 
-function showVideo(index) {
-  const track = tracks[index];
-  container.innerHTML = '';
-
-  const iframe = document.createElement('iframe');
-  iframe.width = "100%";
-  iframe.height = "315";
-  iframe.src = `${track.url}&autoplay=1`;
-  iframe.frameBorder = "0";
-  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-  iframe.allowFullscreen = true;
-
-  container.appendChild(iframe);
-  container.innerHTML += `<p style="text-align:center; margin-top:10px;">${track.title}</p>`;
-}
-
-// Initialize first video
-showVideo(currentIndex);
-
-// Track controls
-document.getElementById('nextVideo').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % tracks.length;
-  showVideo(currentIndex);
-});
-document.getElementById('prevVideo').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
-  showVideo(currentIndex);
-});
-
-document.getElementById('searchButton').addEventListener('click', () => {
-  window.location.href = 'artists.html';
-});
-
-// Trigger search on Enter
-document.getElementById('searchInput').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    document.getElementById('searchButton').click();
+  function loadVideo(index) {
+    const video = tracks[index];
+    const container = document.getElementById('youtube-player');
+    container.innerHTML = `
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/BCV_vlRDrsQ?si=67necbl5WKSiGB1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    `;
+    document.getElementById('track-title').textContent = `Now Playing: ${video.title}`;
   }
-});
+
+  // Load first video
+  loadVideo(currentTrackIndex);
+
+  document.getElementById('nextVideo').addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    loadVideo(currentTrackIndex);
+  });
+  document.getElementById('prevVideo').addEventListener('click', () => {
+    currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+    loadVideo(currentTrackIndex);
+  });
