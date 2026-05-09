@@ -1,7 +1,5 @@
-/* Import a modern font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +8,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fff8f0; /* soft background */
+  background-color: #fff8f0;
   color: #222;
   line-height: 1.6;
 }
@@ -43,7 +41,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Header styles: Center logo and search, add spacing for balance */
 header {
   display: flex;
   flex-direction: column;
@@ -52,7 +49,6 @@ header {
   background: linear-gradient(135deg, #f4a261, #d2691e);
   color: #fff;
   text-align: center;
-  gap: 20px; /* space between logo and search input */
 }
 .logo {
   font-size: 3em;
@@ -96,28 +92,21 @@ header {
   background-color: #8e4b14;
 }
 
-/* Main container for content - add padding for breathing room */
-.container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-/* Artists section */
+/* Main content styling */
 section {
   margin-bottom: 50px;
 }
 section h3 {
-  font-size: 2em; /* larger heading for emphasis */
+  font-size: 2em;
   margin-bottom: 20px;
   border-bottom: 2px solid #ccc;
   padding-bottom: 8px;
   color: #444;
   font-weight: 600;
-  text-align: center; /* center the section heading */
+  text-align: center;
 }
 
-/* Artists grid: keep flexible, with spacing and centered items */
+/* Artist grid styles */
 .artist-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
