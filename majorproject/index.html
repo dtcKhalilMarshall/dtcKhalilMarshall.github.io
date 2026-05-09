@@ -5,91 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Melodic Culture</title>
   <link rel="stylesheet" href="styles.css" />
-    <script src="scripts.js" defer></script>
+   <script src="scripts.js" defer></script>
+  
 </head>
 <body>
-
   <!-- Navigation Bar -->
   <nav>
-   <a href="index.html">Home</a>
-  <a href="artists.html">Artists</a>
-  <a href="genres.html">Genres</a>
-  <a href="playlists.html">Playlists</a>
-  <a href="about.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="artists.html">Artists</a>
+    <a href="genres.html">Genres</a>
+    <a href="playlists.html">Playlists</a>
+    <a href="about.html">About</a>
   </nav>
 
-  <!-- Search Bar -->
+
+  <!-- Header -->
   <header>
     <div class="logo">Melodic Culture</div>
-    <input type="text" id="searchInput" placeholder="Search artists..." />
+    <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search artists..." />
+  <button id="searchButton">Search</button>
+</div>
   </header>
-
-  <!-- Featured Artist Banner -->
-  <div class="featured-banner">
-    <h2>Featured Artist: MelodyBloom</h2>
+  
+ <!-- YouTube Music Cycle Section -->
+  <h3 style="text-align:center; margin-top:50px;">Featured Music Cycle</h3>
+  
+  <!-- Navigation Buttons for Tracks -->
+  <div style="text-align:center; margin:20px 0;">
+    <button id="prevVideo" style="padding:10px 20px; font-size:1em; border:none; border-radius:5px; background-color:#b25e17; color:#fff; cursor:pointer;">Previous Track</button>
+    <button id="nextVideo" style="padding:10px 20px; font-size:1em; border:none; border-radius:5px; background-color:#b25e17; color:#fff; cursor:pointer; margin-left:10px;">Next Track</button>
   </div>
-
-  <!-- Recommended Artists -->
-  <section class="recommended">
-    <h3>Recommended Artists Based on Your Interests</h3>
-    <div class="artists-grid" id="artistsGrid">
-      <!-- Artist cards will be generated here dynamically or manually -->
-    </div>
-  </section>
+  
+  <!-- Video Container -->
+  <div id="youtube-player" style="text-align:center; margin:20px 0;">
+  </div>
 
   <!-- Explore Artist Pages -->
   <section class="artist-links">
-    <h3>Explore Artist Pages</h3>
+    <h3>Artists</h3>
     <div class="artist-grid">
+      <!-- Your artist links -->
       <a href="#steve-lacy">Steve Lacy</a>
-<a href="#melodybloom">Melody Bloom</a>
-<a href="#chenayder">Chenayder</a>
-<a href="#laila">Laila!</a>
-<a href="#willow-smith">Willow Smith</a>
-<a href="#essosa">Essosa</a>
-<a href="#sade">Sade</a>
-<a href="#moio">MOIO</a>
-<a href="#keltiey">keltiey</a>
-<a href="#lilhero">Lil Hero</a>
-<a href="#aya-nakamura">Aya Nakamura</a>
-<a href="#luci4">Luci4</a>
-<a href="#kanii">Kanii</a>
-<a href="#frank-ocean">Frank Ocean</a>
-<a href="#pinkpantheress">PinkPantheress</a>
-<a href="#miguel">Miguel</a>
-<a href="#megan-stallion">Megan Thee Stallion</a>
-<a href="#kehlani">Kehlani</a>
-<a href="#cookie-kawaii">Cookie Kawaii</a>
-<a href="#tyler">Tyler The Creator</a>
-<a href="#sza">SZA</a>
-<a href="#rihanna">Rihanna</a>
-<a href="#asap">A$AP Rocky</a>
-<a href="#kendrick">Kendrick Lamar</a>
-<a href="#drake">Drake</a>
-<a href="#childish-gambino">Childish Gambino</a>
-<a href="#tyla">Tyla</a>
-<a href="#dojacat">Doja Cat</a>
-<a href="#leon-thomas">Leon Thomas</a>
-<a href="#beyonce">Beyoncé</a>
-<a href="#doe-chii">Doechii</a>
-<a href="#olivia-dean">Olivia Dean</a>
-<a href="#ravyn-lenae">Ravyn Lenae</a>
-<a href="#rochelle-jordan">Rochelle Jordan</a>
-<a href="#solange">Solange</a>
-<a href="#tinashe">Tinashe</a>
-<a href="#tems">Tems</a>
-<a href="#victoria">Victoria Monet</a>
-<a href="#flo">Flo</a>
-<a href="#say-now">Say Now</a>
-<a href="#3quency">3Quency</a>
-<a href="#szn4">SZN4</a>
-<a href="#soulidified">Soulidified</a>
-<a href="#bryson">Bryson Tiller</a>
-<a href="#brent">Brent Faiyaz</a>
-<a href="#partynextdoor">PARTYNEXTDOOR</a>
-<a href="#dontoliver">Don Toliver</a>
-<a href="#swaelee">Swae Lee</a>
-<a href="#jheneaiko">Jhené Aiko</a>
+      <a href="#melodybloom">Melody Bloom</a>
+      <a href="#chenayder">Chenayder</a>
+      <a href="#laila">Laila!</a>
+      <a href="#willow-smith">Willow Smith</a>
+      <a href="#essosa">Essosa</a>
+      <a href="#sade">Sade</a>
+      <a href="#moio">MOIO</a>
+      <a href="#keltiey">keltiey</a>
+      <a href="#lilhero">Lil Hero</a>
+      <a href="#aya-nakamura">Aya Nakamura</a>
+      <a href="#luci4">Luci4</a>
+      <a href="#kanii">Kanii</a>
+      <a href="#frank-ocean">Frank Ocean</a>
+      <a href="#pinkpantheress">PinkPantheress</a>
+      <a href="#miguel">Miguel</a>
+      <a href="#megan-stallion">Megan Thee Stallion</a>
+      <a href="#kehlani">Kehlani</a>
+      <a href="#cookie-kawaii">Cookie Kawaii</a>
+      <a href="#tyler">Tyler The Creator</a>
+      <a href="#sza">SZA</a>
+      <a href="#rihanna">Rihanna</a>
+      <a href="#asap">A$AP Rocky</a>
+      <a href="#kendrick">Kendrick Lamar</a>
+      <a href="#drake">Drake</a>
+      <a href="#childish-gambino">Childish Gambino</a>
+      <a href="#tyla">Tyla</a>
+      <a href="#dojacat">Doja Cat</a>
+      <a href="#leon-thomas">Leon Thomas</a>
+      <a href="#beyonce">Beyoncé</a>
+      <a href="#doe-chii">Doechii</a>
+      <a href="#olivia-dean">Olivia Dean</a>
+      <a href="#ravyn-lenae">Ravyn Lenae</a>
+      <a href="#rochelle-jordan">Rochelle Jordan</a>
+      <a href="#solange">Solange</a>
+      <a href="#tinashe">Tinashe</a>
+      <a href="#tems">Tems</a>
+      <a href="#victoria">Victoria Monet</a>
+      <a href="#flo">Flo</a>
+      <a href="#say-now">Say Now</a>
+      <a href="#3quency">3Quency</a>
+      <a href="#szn4">SZN4</a>
+      <a href="#soulidified">Soulidified</a>
+      <a href="#bryson">Bryson Tiller</a>
+      <a href="#brent">Brent Faiyaz</a>
+      <a href="#partynextdoor">PARTYNEXTDOOR</a>
+      <a href="#dontoliver">Don Toliver</a>
+      <a href="#swaelee">Swae Lee</a>
+      <a href="#jheneaiko">Jhené Aiko</a>
+      <a href="#babystorme">BabyStorme</a>
     </div>
   </section>
 </body>
