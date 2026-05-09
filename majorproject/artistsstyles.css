@@ -1,11 +1,9 @@
-/* Reset and box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styles for consistency */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #fff8f0;
@@ -14,7 +12,6 @@ body {
   text-align: center;
 }
 
-/* Navigation styles - matching homepage */
 nav {
   position: sticky;
   top: 0;
@@ -43,7 +40,6 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* Header styles - matching homepage */
 header {
   display: flex;
   flex-direction: column;
@@ -59,7 +55,6 @@ header h1 {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Main container styles */
 .artists-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -146,7 +141,6 @@ header h1 {
   transform: scale(1.2);
 }
 
-/* Paragraphs below artist name */
 .artist-card p {
   max-width: 90%;
   margin: 0 auto 10px auto;
