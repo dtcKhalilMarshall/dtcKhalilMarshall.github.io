@@ -90,7 +90,7 @@ const artists = [
   { name: "SZN4", spotify: "https://open.spotify.com/artist/3aVcen0IJtz6svz8DVlpfc" },
   { name: "Soulidified", spotify: "https://open.spotify.com/artist/3nE9FhhwfDdyuObjky2v55" },
   { name: "Bryson Tiller", spotify: "https://open.spotify.com/artist/2EMAnMvWE2eb56ToJVfCWs" },
-  { name: "Bryn Faiyaz", spotify: "https://open.spotify.com/artist/3tlXnStJ1fFhdScmQeLpuG" },
+  { name: "Brent Faiyaz", spotify: "https://open.spotify.com/artist/3tlXnStJ1fFhdScmQeLpuG" },
   { name: "PARTYNEXTDOOR", spotify: "https://open.spotify.com/artist/2HPaUgqeutzr3jx5a9WyDV" },
   { name: "Don Toliver", spotify: "https://open.spotify.com/artist/4Gso3d4CscCijv0lmajZWs" },
   { name: "Swae Lee", spotify: "https://open.spotify.com/artist/1zNqQNIdeOUZHb8zbZRFMX" },
