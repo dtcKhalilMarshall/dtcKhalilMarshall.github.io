@@ -60,14 +60,14 @@ const tracks = [
   { title: "Aya Nakamura - Pookie", url: "https://www.youtube.com/embed/_bPa-VG0AWo?si=6vBJLVqXMvNsPVul" },
 
   // Luci4
-  { title: "Luci4 - Song 1", url: "#" },
-  { title: "Luci4 - Song 2", url: "#" },
-  { title: "Luci4 - Song 3", url: "#" },
+  { title: "Luci4 - Kurxxed Emeraldz", url: "https://www.youtube.com/embed/-DENhuNNkK4?si=GMD0-LQLQskxU7GA" },
+  { title: "Luci4 - BodyPartz", url: "https://www.youtube.com/embed/qIe8jxfmMZ0?si=z9q_hgREUJVopPN8" },
+  { title: "Luci4 - Dead n Gone", url: "https://www.youtube.com/embed/c0DtVyMNkRk?si=69RjJlJEYvCA3lX5" },
 
   // Kanii
-  { title: "Kanii - Song 1", url: "#" },
-  { title: "Kanii - Song 2", url: "#" },
-  { title: "Kanii - Song 3", url: "#" },
+  { title: "Kanii - Go (with 9lives)", url: "https://www.youtube.com/embed/ST5yAZx5mgs?si=1xAm1CLhm68keRoF" },
+  { title: "Kanii - I Know ", url: "https://www.youtube.com/embed/UGYjHg8Xu7U?si=dIUtZdFXtWmJSYP3" },
+  { title: "Kanii - sins (let me in)", url: "https://www.youtube.com/embed/6uPHLCh6Q6Y?si=xsj0O_7aP9i4sT9R" },
 
   // Frank Ocean
   { title: "Frank Ocean - Pink + White", url: "https://www.youtube.com/embed/uzS3WG6__G4?si=WCkojpktDVaK_E6x" },
@@ -85,24 +85,21 @@ const tracks = [
   { title: "Miguel - Lotus Flower Bomb (with Wale)", url: "https://www.youtube.com/embed/ZKvhkcJDbzY?si=5E6-vXNpbHfr4dZK" },
 
   // Megan Thee Stallion
-  { title: "Megan Thee Stallion - Song 1", url: "#" },
-  { title: "Megan Thee Stallion - Song 2", url: "#" },
-  { title: "Megan Thee Stallion - Song 3", url: "#" },
+  { title: "Megan Thee Stallion - Savage Remix ft. Beyonce", url: "https://www.youtube.com/embed/lEIqjoO0-Bs?si=-nz-Vov9BbsbzfiH" },
+  { title: "Megan Thee Stallion - B.A.S.", url: "https://www.youtube.com/embed/ybV3JIUrpvg?si=f6KPlm59uqwk0v70" },
+  { title: "Megan Thee Stallion - BOA", url: "https://www.youtube.com/embed/TKQY2ZlIEjY?si=Qpuo33h7hrFyORwO" },
 
   // Kehlani
-  { title: "Kehlani - Song 1", url: "#" },
-  { title: "Kehlani - Song 2", url: "#" },
-  { title: "Kehlani - Song 3", url: "#" },
+  { title: "Kehlani - Gangsta", url: "https://www.youtube.com/embed/LAYgZEMMWxo?si=8OfHFttVpC0_0Tu7" },
+  { title: "Kehlani - Folded", url: "https://www.youtube.com/embed/KFMYx1TibeQ?si=C2iwbufJtyW7_016" },
 
   // Cookiee Kawaii
-  { title: "Cookiee Kawaii - Song 1", url: "#" },
-  { title: "Cookiee Kawaii - Song 2", url: "#" },
-  { title: "Cookiee Kawaii - Song 3", url: "#" },
+  { title: "Cookiee Kawaii - Vibe (If I Back It Up)", url: "https://www.youtube.com/embed/Pf4Be8xeD9c?si=SNXrnL9mF_M79_H7" },
+  { title: "Cookiee Kawaii - Violin", url: "https://www.youtube.com/embed/JKHaoxU-GO8?si=4y76rSfVZ-dJ_dj6" },
 
   // Tyler The Creator
-  { title: "Tyler The Creator - Song 1", url: "#" },
-  { title: "Tyler The Creator - Song 2", url: "#" },
-  { title: "Tyler The Creator - Song 3", url: "#" },
+  { title: "Tyler The Creator - SEE YOU AGAIN ft. Kali Uchis", url: "https://www.youtube.com/embed/TGgcC5xg9YI?si=HTVbUddw4Ms7AfTd" },
+  { title: "Tyler The Creator - EARFQUAKE", url: "https://www.youtube.com/embed/HmAsUQEFYGI?si=JPwxSDYKlDWZadoP" },
 
   // SZA
   { title: "SZA - The Weekend", url: "https://www.youtube.com/embed/cMD63TwzB1o?si=kXapuf_OQ0GaGWAs" },
@@ -110,9 +107,7 @@ const tracks = [
   { title: "SZA - Hit Different", url: "https://www.youtube.com/embed/qJlMkMtK7-8?si=n0Rj_Flxg_Epe1Ec" },
 
   // A$AP Rocky
-  { title: "A$AP Rocky - Song 1", url: "#" },
-  { title: "A$AP Rocky - Song 2", url: "#" },
-  { title: "A$AP Rocky - Song 3", url: "#" },
+  { title: "A$AP Rocky - Fashion Killa", url: "https://www.youtube.com/embed/F6VfsJ7LAlE?si=i7ramNtrFaRfcpmY" },
 
   // Kendrick Lamar
   { title: "Kendrick Lamar - Song 1", url: "#" },
@@ -165,7 +160,6 @@ const tracks = [
   // Rochelle Jordan
   { title: "Rochelle Jordan - Lowkey", url: "https://www.youtube.com/embed/JyqCj8D2Wzw?si=-o1zuZwywBgnSxHB" },
   { title: "Rochelle Jordan - Doing It Too", url: "https://www.youtube.com/embed/VIKQBN6mckQ?si=0bUhC9x4loPoo7g9" },
-  { title: "Rochelle Jordan - Song 3", url: "#" },
 
   // Solange
   { title: "Solange - Song 1", url: "#" },
