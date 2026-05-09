@@ -5,49 +5,49 @@ const tracks = [
   { title: "Steve Lacy - Ryd", url: "https://www.youtube.com/embed/BCV_vlRDrsQ?si=LstQmGucR-P0hN2E" },
 
   // Rihanna
-  { title: "Rihanna - Song 1", url: "https://www.youtube.com/embed/WSSShAOKYfo?si=mMdmLfg7ORAAwC13" },
-  { title: "Rihanna - Song 2", url: "https://www.youtube.com/embed/EDNaJ1ou71Y?si=kuZLDQNafNTMoG0A" },
-  { title: "Rihanna - Song 3", url: "https://www.youtube.com/embed/i0S40arGfCQ?si=kEy2udIPeesr16yy" },
+  { title: "Rihanna - Consideration ft. SZA", url: "https://www.youtube.com/embed/WSSShAOKYfo?si=mMdmLfg7ORAAwC13" },
+  { title: "Rihanna - James Joint", url: "https://www.youtube.com/embed/EDNaJ1ou71Y?si=kuZLDQNafNTMoG0A" },
+  { title: "Rihanna - Woo", url: "https://www.youtube.com/embed/i0S40arGfCQ?si=kEy2udIPeesr16yy" },
 
   // Melody Bloom
-  { title: "Melody Bloom - Song 1", url: "https://www.youtube.com/embed/POcZqfP3Ja4?si=C1Zg8RPZV5vOKkXe" },
-  { title: "Melody Bloom - Song 2", url: "https://www.youtube.com/embed/-UG5dNVKWEU?si=9pydHO_cfQYR_AVn" },
-  { title: "Melody Bloom - Song 3", url: "https://www.youtube.com/embed/PM33ozfRtAo?si=0eZQlmvYLCtUDNKo" },
+  { title: "Melody Bloom - strangers (with proderics)", url: "https://www.youtube.com/embed/POcZqfP3Ja4?si=C1Zg8RPZV5vOKkXe" },
+  { title: "Melody Bloom - wasted time (with proderics)", url: "https://www.youtube.com/embed/-UG5dNVKWEU?si=9pydHO_cfQYR_AVn" },
+  { title: "Melody Bloom - (with nafeesisboujee)", url: "https://www.youtube.com/embed/PM33ozfRtAo?si=0eZQlmvYLCtUDNKo" },
 
   // Chenayder
-  { title: "Chenayder - Song 1", url: "https://www.youtube.com/embed/E4IPwBbdm7M?si=ETXPNiRr2KKE8WA6" },
-  { title: "Chenayder - Song 2", url: "https://www.youtube.com/embed/nhS6tyxLoMU?si=dcqMPS3sLHRCDCPa" },
-  { title: "Chenayder - Song 3", url: "https://www.youtube.com/embed/gd0f2KKhtHc?si=ge50RdMwybenUMpx" },
+  { title: "Chenayder - Colors (with MAVI)", url: "https://www.youtube.com/embed/E4IPwBbdm7M?si=ETXPNiRr2KKE8WA6" },
+  { title: "Chenayder - Strawberry Perfume", url: "https://www.youtube.com/embed/nhS6tyxLoMU?si=dcqMPS3sLHRCDCPa" },
+  { title: "Chenayder - Wonder", url: "https://www.youtube.com/embed/gd0f2KKhtHc?si=ge50RdMwybenUMpx" },
 
   // Laila!
-  { title: "Laila! - Song 1", url: "https://www.youtube.com/embed/AUf2n2R4fI8?si=jBYq--Loh1nxOMwi" },
-  { title: "Laila! - Song 2", url: "https://www.youtube.com/embed/9qPH9FuKp4M?si=GQGiaYbN_baFJ-Ju" },
-  { title: "Laila! - Song 3", url: "https://www.youtube.com/embed/PiVqASJrFVU?si=YzLAb5MXQtnn_9QJ" },
+  { title: "Laila! - Not My Problem", url: "https://www.youtube.com/embed/AUf2n2R4fI8?si=jBYq--Loh1nxOMwi" },
+  { title: "Laila! - Like That!", url: "https://www.youtube.com/embed/9qPH9FuKp4M?si=GQGiaYbN_baFJ-Ju" },
+  { title: "Laila! - Want 2", url: "https://www.youtube.com/embed/PiVqASJrFVU?si=YzLAb5MXQtnn_9QJ" },
 
   // Willow Smith
-  { title: "Willow Smith - Song 1", url: "https://www.youtube.com/embed/2dTMIH5gCHg?si=iy0iHk26wkcX3ap1" },
-  { title: "Willow Smith - Song 2", url: "https://www.youtube.com/embed/1Xfdjqa5dfY?si=gSoM4NfO1Z82yD12" },
-  { title: "Willow Smith - Song 3", url: "https://www.youtube.com/embed/eG9KzyVO638?si=OsU5qg0qjZBd0WXj" },
+  { title: "Willow Smith - Meet Me At Our Spot", url: "https://www.youtube.com/embed/2dTMIH5gCHg?si=iy0iHk26wkcX3ap1" },
+  { title: "Willow Smith - Wait a Minute!", url: "https://www.youtube.com/embed/1Xfdjqa5dfY?si=gSoM4NfO1Z82yD12" },
+  { title: "Willow Smith - transparentsoul ft. Travis Barker", url: "https://www.youtube.com/embed/eG9KzyVO638?si=OsU5qg0qjZBd0WXj" },
 
   // Essosa
-  { title: "Essosa - Song 1", url: "https://www.youtube.com/embed/sKEGKuIScCI?si=KPgdGN3rlOeE6Go1" },
-  { title: "Essosa - Song 2", url: "https://www.youtube.com/embed/GOU8b7mkIVM?si=Rjz28_axQvql_NTA" },
-  { title: "Essosa - Song 3", url: "https://www.youtube.com/embed/yV7rq2UVumQ?si=-etdcXeB24s-9hE3" },
+  { title: "Essosa - Waste My Time", url: "https://www.youtube.com/embed/sKEGKuIScCI?si=KPgdGN3rlOeE6Go1" },
+  { title: "Essosa - Tell Nobody", url: "https://www.youtube.com/embed/GOU8b7mkIVM?si=Rjz28_axQvql_NTA" },
+  { title: "Essosa - Muse", url: "https://www.youtube.com/embed/yV7rq2UVumQ?si=-etdcXeB24s-9hE3" },
 
   // Sade
-  { title: "Sade - Song 1", url: "https://www.youtube.com/embed/4TYv2PhG89A?si=SBW7o8QzQXCqdUfk" },
-  { title: "Sade - Song 2", url: "https://www.youtube.com/embed/_WcWHZc8s2I?si=3t6El0Mbu1Ww0a1A" },
-  { title: "Sade - Song 3", url: "https://www.youtube.com/embed/MmOau-PMWJk?si=Y-ki1Fm3B_AuGEM8" },
+  { title: "Sade - Smooth Operator", url: "https://www.youtube.com/embed/4TYv2PhG89A?si=SBW7o8QzQXCqdUfk" },
+  { title: "Sade - No Ordinary Love", url: "https://www.youtube.com/embed/_WcWHZc8s2I?si=3t6El0Mbu1Ww0a1A" },
+  { title: "Sade - Kiss Of Life", url: "https://www.youtube.com/embed/MmOau-PMWJk?si=Y-ki1Fm3B_AuGEM8" },
 
   // MOIO
-  { title: "MOIO - Song 1", url: "https://www.youtube.com/embed/cacviihAqao?si=KK28A2qi7ZLZoeNI" },
-  { title: "MOIO - Song 2", url: "https://www.youtube.com/embed/SDFz70N1MYc?si=CMuiEUlOn-2JNj4w" },
-  { title: "MOIO - Song 3", url: "https://www.youtube.com/embed/JJCnboIo6ag?si=dZ3vSpF22IUiDTP9" },
+  { title: "MOIO - Moments", url: "https://www.youtube.com/embed/cacviihAqao?si=KK28A2qi7ZLZoeNI" },
+  { title: "MOIO - Figures On The Wall", url: "https://www.youtube.com/embed/SDFz70N1MYc?si=CMuiEUlOn-2JNj4w" },
+  { title: "MOIO - Figure It Out", url: "https://www.youtube.com/embed/JJCnboIo6ag?si=dZ3vSpF22IUiDTP9" },
 
   // Keltiey
-  { title: "Keltiey - Song 1", url: "https://www.youtube.com/embed/94oeJlfI0x8?si=WquZIIL4so2rrYQe" },
-  { title: "Keltiey - Song 2", url: "https://www.youtube.com/embed/up5lObSLhVw?si=zhaT9--vcu9_AwRx" },
-  { title: "Keltiey - Song 3", url: "https://www.youtube.com/embed/bRL3rNLO23I?si=NkgKjPY9GcRB4QRW" },
+  { title: "Keltiey - Need", url: "https://www.youtube.com/embed/94oeJlfI0x8?si=WquZIIL4so2rrYQe" },
+  { title: "Keltiey - goingoutsad", url: "https://www.youtube.com/embed/up5lObSLhVw?si=zhaT9--vcu9_AwRx" },
+  { title: "Keltiey - Kn0 (with Skaiwater)", url: "https://www.youtube.com/embed/bRL3rNLO23I?si=NkgKjPY9GcRB4QRW" },
 
   // Lil Hero
   { title: "Lil Hero - gun show", url: "https://www.youtube.com/embed/d128wLMMOnc?si=vOmY5yZ3-9Bkrx76" },
@@ -144,7 +144,7 @@ const tracks = [
 
   // Beyoncé
   { title: "Beyoncé - Crazy In Love ft. JAY Z", url: "https://www.youtube.com/embed/ViwtNLUqkMY?si=9T1bw2kOC_Xn3BGv" },
-  { title: "Beyoncé - Beautiful Liar ft. Shakira", url: "https://www.youtube.com/embed/QrOe2h9RtWI?si=QBWR0iCKC_sh27ER" },
+  { title: "Beyoncé - Beautiful Liar (with Shakira)", url: "https://www.youtube.com/embed/QrOe2h9RtWI?si=QBWR0iCKC_sh27ER" },
   { title: "Beyoncé - AMERICA HAS A PROBLEM ft. Kendrick Lamar", url: "https://www.youtube.com/embed/Q0E4wVF2a4k?si=W1k79mmPjyj6HdIM" },
 
   // Doechii
