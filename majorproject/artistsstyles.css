@@ -1,56 +1,61 @@
+/* Reset and box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body styles for consistency */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #fff8f0;
   color: #333;
   line-height: 1.6;
   text-align: center;
 }
 
-/* Navigation styles */
+/* Navigation styles - matching homepage */
 nav {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
-  background-color: #d2691e;
-  padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(210, 105, 30, 0.9);
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 nav a {
   color: #fff;
-  margin: 0 15px;
+  margin: 0 20px;
   padding: 8px 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1em;
+  padding: 8px 12px;
   border-radius: 4px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
 }
-nav a:hover,
-nav a.active {
+nav a:hover {
   background-color: #b25e17;
+  color: #fff;
   transform: translateY(-2px);
 }
-nav a.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
 
-/* Header styles */
+/* Header styles - matching homepage */
 header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 30px 40px;
-  background-color: #f4a261;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f4a261, #d2691e);
+  color: #fff;
+  text-align: center;
 }
 header h1 {
-  font-size: 2.5em;
-  color: #fff;
+  font-size: 3em;
+  font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
@@ -100,7 +105,7 @@ header h1 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Centered and wrapping artist name and icons */
+/* Artist name styling */
 .artist-name {
   display: flex;
   flex-direction: column;
@@ -115,7 +120,7 @@ header h1 {
   color: #d2691e;
   text-decoration: none;
   margin-bottom: 5px;
-  word-break: break-word; /* allows long words to wrap */
+  word-break: break-word;
   text-align: center;
 }
 .artist-name a:hover {
@@ -123,12 +128,12 @@ header h1 {
   text-decoration: underline;
 }
 
-/* Container for music icons - inline and centered */
+/* Container for music icons */
 .music-icons {
   display: flex;
   justify-content: center;
   gap: 12px;
-  flex-wrap: wrap; /* allow icons to wrap on small screens */
+  flex-wrap: wrap;
 }
 .icon-small {
   width: 32px;
@@ -141,7 +146,7 @@ header h1 {
   transform: scale(1.2);
 }
 
-/* Paragraphs below artist name, with wrapping and centered text */
+/* Paragraphs below artist name */
 .artist-card p {
   max-width: 90%;
   margin: 0 auto 10px auto;
