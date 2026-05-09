@@ -50,14 +50,14 @@ const tracks = [
   { title: "Keltiey - Song 3", url: "https://www.youtube.com/embed/bRL3rNLO23I?si=NkgKjPY9GcRB4QRW" },
 
   // Lil Hero
-  { title: "Lil Hero - Song 1", url: "#" },
-  { title: "Lil Hero - Song 2", url: "#" },
-  { title: "Lil Hero - Song 3", url: "#" },
+  { title: "Lil Hero - gun show", url: "https://www.youtube.com/embed/d128wLMMOnc?si=vOmY5yZ3-9Bkrx76" },
+  { title: "Lil Hero - radar", url: "https://www.youtube.com/embed/K2MIvqTxK94?si=ka2xVgJ40VFAK7sU" },
+  { title: "Lil Hero - easy going down", url: "https://www.youtube.com/embed/4PM9qreKm0c?si=awBRhBzsiO_k_S_Y" },
 
   // Aya Nakamura
-  { title: "Aya Nakamura - Song 1", url: "#" },
-  { title: "Aya Nakamura - Song 2", url: "#" },
-  { title: "Aya Nakamura - Song 3", url: "#" },
+  { title: "Aya Nakamura - Djadja", url: "https://www.youtube.com/embed/iPGgnzc34tY?si=BGu-CirmQPouWzMX" },
+  { title: "Aya Nakamura - Copines", url: "https://www.youtube.com/embed/EkGiGf8utCM?si=WJstRDL7sqCeQVdB" },
+  { title: "Aya Nakamura - Pookie", url: "https://www.youtube.com/embed/_bPa-VG0AWo?si=6vBJLVqXMvNsPVul" },
 
   // Luci4
   { title: "Luci4 - Song 1", url: "#" },
@@ -70,19 +70,19 @@ const tracks = [
   { title: "Kanii - Song 3", url: "#" },
 
   // Frank Ocean
-  { title: "Frank Ocean - Song 1", url: "#" },
-  { title: "Frank Ocean - Song 2", url: "#" },
-  { title: "Frank Ocean - Song 3", url: "#" },
+  { title: "Frank Ocean - Pink + White", url: "https://www.youtube.com/embed/uzS3WG6__G4?si=WCkojpktDVaK_E6x" },
+  { title: "Frank Ocean - Chanel", url: "https://www.youtube.com/embed/XnbsIl2BnWw?si=HaPm20ARyAYit73d" },
+  { title: "Frank Ocean - Nights", url: "https://www.youtube.com/embed/r4l9bFqgMaQ?si=LoorNzkFSsKhd8tW" },
 
   // PinkPantheress
-  { title: "PinkPantheress - Song 1", url: "#" },
-  { title: "PinkPantheress - Song 2", url: "#" },
-  { title: "PinkPantheress - Song 3", url: "#" },
+  { title: "PinkPantheress - Just a Waste", url: "https://www.youtube.com/embed/gOBT9Z7UMLs?si=gX_TMMvWfj7Ssh95" },
+  { title: "PinkPantheress - Passion", url: "https://www.youtube.com/embed/0Szr5Dcwn4Y?si=2VWzhyiTJ-aLAiqA" },
+  { title: "PinkPantheress - I must apologize", url: "https://www.youtube.com/embed/QrcrrIlKen0?si=rmm6emalE4U6V3ik" },
 
   // Miguel
-  { title: "Miguel - Song 1", url: "#" },
-  { title: "Miguel - Song 2", url: "#" },
-  { title: "Miguel - Song 3", url: "#" },
+  { title: "Miguel - Adorn", url: "https://www.youtube.com/embed/8dM5QYdTo08?si=0MZst6HhSUN5gvvd" },
+  { title: "Miguel - Girl With The Tattoo Enter.lewd", url: "https://www.youtube.com/embed/XDOaT7nqqvI?si=2aozves8kirQq7Uj" },
+  { title: "Miguel - Lotus Flower Bomb (with Wale)", url: "https://www.youtube.com/embed/ZKvhkcJDbzY?si=5E6-vXNpbHfr4dZK" },
 
   // Megan Thee Stallion
   { title: "Megan Thee Stallion - Song 1", url: "#" },
@@ -105,9 +105,9 @@ const tracks = [
   { title: "Tyler The Creator - Song 3", url: "#" },
 
   // SZA
-  { title: "SZA - Song 1", url: "#" },
-  { title: "SZA - Song 2", url: "#" },
-  { title: "SZA - Song 3", url: "#" },
+  { title: "SZA - The Weekend", url: "https://www.youtube.com/embed/cMD63TwzB1o?si=kXapuf_OQ0GaGWAs" },
+  { title: "SZA - Love Galore ft. Travis Scott", url: "https://www.youtube.com/embed/hHXfCOjb3fk?si=xwBllQHvC2aHzsPN" },
+  { title: "SZA - Hit Different", url: "https://www.youtube.com/embed/qJlMkMtK7-8?si=n0Rj_Flxg_Epe1Ec" },
 
   // A$AP Rocky
   { title: "A$AP Rocky - Song 1", url: "#" },
@@ -130,34 +130,32 @@ const tracks = [
   { title: "Childish Gambino - Song 3", url: "#" },
 
   // Tyla
-  { title: "Tyla - Song 1", url: "#" },
-  { title: "Tyla - Song 2", url: "#" },
-  { title: "Tyla - Song 3", url: "#" },
+  { title: "Tyla - Water", url: "https://www.youtube.com/embed/XoiOOiuH8iI?si=UNy3N-rJ3top5YdX" },
+  { title: "Tyla - PUSH 2 START", url: "https://www.youtube.com/embed/uLK2r3sG4lE?si=eZToizRCubtrJk0z" },
+  { title: "Tyla - SHE DID IT AGAIN ft. Zara Larsson", url: "https://www.youtube.com/embed/rtwpk9rb1Dc?si=IOJWrG_lG_dIjgtj" },
 
   // Doja Cat
-  { title: "Doja Cat - Song 1", url: "#" },
-  { title: "Doja Cat - Song 2", url: "#" },
-  { title: "Doja Cat - Song 3", url: "#" },
+  { title: "Doja Cat - Say So", url: "https://www.youtube.com/embed/pok8H_KF1FA?si=86_P0rhdK8elMr81" },
+  { title: "Doja Cat - Kiss Me More ft. SZA", url: "https://www.youtube.com/embed/0EVVKs6DQLo?si=iE09_afgbFJlACPD" },
+  { title: "Doja Cat - Streets", url: "https://www.youtube.com/embed/jJdlgKzVsnI?si=yPYpjq0B30qqd9Iv" },
 
   // Leon Thomas
-  { title: "Leon Thomas - Song 1", url: "#" },
-  { title: "Leon Thomas - Song 2", url: "#" },
-  { title: "Leon Thomas - Song 3", url: "#" },
+  { title: "Leon Thomas - Mutt", url: "https://www.youtube.com/embed/ejEzHE5ZMT8?si=zwQJMeNNWhK7IS0z" },
 
   // Beyoncé
-  { title: "Beyoncé - Song 1", url: "#" },
-  { title: "Beyoncé - Song 2", url: "#" },
-  { title: "Beyoncé - Song 3", url: "#" },
+  { title: "Beyoncé - Crazy In Love ft. JAY Z", url: "https://www.youtube.com/embed/ViwtNLUqkMY?si=9T1bw2kOC_Xn3BGv" },
+  { title: "Beyoncé - Beautiful Liar ft. Shakira", url: "https://www.youtube.com/embed/QrOe2h9RtWI?si=QBWR0iCKC_sh27ER" },
+  { title: "Beyoncé - AMERICA HAS A PROBLEM ft. Kendrick Lamar", url: "https://www.youtube.com/embed/Q0E4wVF2a4k?si=W1k79mmPjyj6HdIM" },
 
   // Doechii
-  { title: "Doechii - Song 1", url: "#" },
-  { title: "Doechii - Song 2", url: "#" },
-  { title: "Doechii - Song 3", url: "#" },
+  { title: "Doechii - Persuasive ft. SZA", url: "https://www.youtube.com/embed/ES9CqKPkdeU?si=lOOOaXPTYO-LvKJN" },
+  { title: "Doechii - NISSAN ALTIMA", url: "https://www.youtube.com/embed/iGbeZNqklic?si=z2mgPOiwItfK9pwi" },
+  { title: "Doechii - Alter Ego ft. JT", url: "https://www.youtube.com/embed/tJkPh2vluFQ?si=0nBFGlqqUxY9scd0" },
 
   // Olivia Dean
-  { title: "Olivia Dean - Song 1", url: "#" },
-  { title: "Olivia Dean - Song 2", url: "#" },
-  { title: "Olivia Dean - Song 3", url: "#" },
+  { title: "Olivia Dean - Man I Need", url: "https://www.youtube.com/embed/oIv_Y2RPQ_A?si=X2t9XwEaivlTXtrc" },
+  { title: "Olivia Dean - So Easy (To Fall In Love)", url: "https://www.youtube.com/embed/3sur4BmjQt8?si=bjIvqjoFB0_1eP3b" },
+  { title: "Olivia Dean - Dive", url: "https://www.youtube.com/embed/NM4e606yFJg?si=sOUmSH58BCLEp5Uc" },
 
   // Ravyn Lenae
   { title: "Ravyn Lenae - Song 1", url: "#" },
@@ -165,8 +163,8 @@ const tracks = [
   { title: "Ravyn Lenae - Song 3", url: "#" },
 
   // Rochelle Jordan
-  { title: "Rochelle Jordan - Song 1", url: "#" },
-  { title: "Rochelle Jordan - Song 2", url: "#" },
+  { title: "Rochelle Jordan - Lowkey", url: "https://www.youtube.com/embed/JyqCj8D2Wzw?si=-o1zuZwywBgnSxHB" },
+  { title: "Rochelle Jordan - Doing It Too", url: "https://www.youtube.com/embed/VIKQBN6mckQ?si=0bUhC9x4loPoo7g9" },
   { title: "Rochelle Jordan - Song 3", url: "#" },
 
   // Solange
@@ -180,9 +178,9 @@ const tracks = [
   { title: "Tinashe - Song 3", url: "#" },
 
   // Tems
-  { title: "Tems - Song 1", url: "#" },
-  { title: "Tems - Song 2", url: "#" },
-  { title: "Tems - Song 3", url: "#" },
+  { title: "Tems - Free Mind", url: "https://www.youtube.com/embed/e8GzTXRAJ30?si=ZeLciIdjZQzGEguU" },
+  { title: "Tems - Higher", url: "https://www.youtube.com/embed/Qa1IaUywiO8?si=jz-nClXHRHlUE8eT" },
+  { title: "Tems - Me & U", url: "https://www.youtube.com/embed/1JltlSJH5bY?si=mNCt-8C7LzwPgoXI" },
 
   // Victoria Monet
   { title: "Victoria Monet - Song 1", url: "#" },
