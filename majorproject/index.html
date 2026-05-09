@@ -5,53 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Melodic Culture</title>
   <link rel="stylesheet" href="styles.css" />
-   <script src="scripts.js" defer></script>
-  
+  <script src="scripts.js" defer></script>
 </head>
+
 <body>
+
   <!-- Navigation Bar -->
   <nav>
     <a href="index.html">Home</a>
     <a href="artists.html">Artists</a>
     <a href="genres.html">Genres</a>
-    <a href="playlists.html">Playlists</a>
     <a href="about.html">About</a>
   </nav>
-
 
   <!-- Header -->
   <header>
     <div class="logo">Melodic Culture</div>
-    <!-- Search Area -->
+
+    <!-- Search -->
     <div class="search-container">
       <input type="text" id="searchInput" placeholder="Search artists..." />
       <button id="searchButton">Search</button>
     </div>
   </header>
-  
-   <!-- Featured Music Cycle -->
-  <h3 style="text-align:center; margin-top:50px;">Featured Music Cycle</h3>
+
+  <!-- Featured Music Cycle -->
+  <h3 style="text-align:center; margin-top:50px;">
+    Featured Music Cycle
+  </h3>
 
   <!-- Track Controls -->
   <div style="text-align:center; margin:20px 0;">
-    <button id="prevVideo" style="padding:10px 20px; font-size:1em; border:none; border-radius:5px; background-color:#b25e17; color:#fff; cursor:pointer;">Previous Track</button>
-    <button id="nextVideo" style="padding:10px 20px; font-size:1em; border:none; border-radius:5px; background-color:#b25e17; color:#fff; cursor:pointer; margin-left:10px;">Next Track</button>
+
+    <button
+      id="prevVideo"
+      style="
+        padding:10px 20px;
+        font-size:1em;
+        border:none;
+        border-radius:5px;
+        background-color:#b25e17;
+        color:#fff;
+        cursor:pointer;
+      "
+    >
+      Previous Track
+    </button>
+
+    <button
+      id="nextVideo"
+      style="
+        padding:10px 20px;
+        font-size:1em;
+        border:none;
+        border-radius:5px;
+        background-color:#b25e17;
+        color:#fff;
+        cursor:pointer;
+        margin-left:10px;
+      "
+    >
+      Next Track
+    </button>
+
   </div>
 
   <!-- YouTube Player -->
-  <div id="youtube-player" style="text-align:center; margin:20px 0;">
+  <div
+    id="youtube-player"
+    style="text-align:center; margin:20px 0;"
+  >
   </div>
 
-<!-- Track Title Display -->
-<h4 id="track-title" style="text-align:center; margin-top:10px;">Now Playing: </h4>
+  <!-- Track Title -->
+  <h4
+    id="track-title"
+    style="text-align:center; margin-top:10px;"
+  >
+    Now Playing:
+  </h4>
 
-  <!-- Explore Artist Pages -->
+  <!-- Artists Section -->
   <section class="artist-links">
+
     <h3>Artists</h3>
+
     <div class="artist-grid">
-      <!-- Your artist links -->
+
       <a href="#steve-lacy">Steve Lacy</a>
-      <a href="#melodybloom">Melody Bloom</a>
+      <a href="#melody-bloom">Melody Bloom</a>
       <a href="#chenayder">Chenayder</a>
       <a href="#laila">Laila!</a>
       <a href="#willow-smith">Willow Smith</a>
@@ -59,48 +101,51 @@
       <a href="#sade">Sade</a>
       <a href="#moio">MOIO</a>
       <a href="#keltiey">keltiey</a>
-      <a href="#lilhero">Lil Hero</a>
+      <a href="#lil-hero">Lil Hero</a>
       <a href="#aya-nakamura">Aya Nakamura</a>
       <a href="#luci4">Luci4</a>
       <a href="#kanii">Kanii</a>
       <a href="#frank-ocean">Frank Ocean</a>
       <a href="#pinkpantheress">PinkPantheress</a>
       <a href="#miguel">Miguel</a>
-      <a href="#megan-stallion">Megan Thee Stallion</a>
+      <a href="#megan-thee-stallion">Megan Thee Stallion</a>
       <a href="#kehlani">Kehlani</a>
-      <a href="#cookie-kawaii">Cookie Kawaii</a>
-      <a href="#tyler">Tyler The Creator</a>
+      <a href="#cookiee-kawaii">Cookiee Kawaii</a>
+      <a href="#tyler-the-creator">Tyler The Creator</a>
       <a href="#sza">SZA</a>
       <a href="#rihanna">Rihanna</a>
-      <a href="#asap">A$AP Rocky</a>
-      <a href="#kendrick">Kendrick Lamar</a>
+      <a href="#asap-rocky">A$AP Rocky</a>
+      <a href="#kendrick-lamar">Kendrick Lamar</a>
       <a href="#drake">Drake</a>
       <a href="#childish-gambino">Childish Gambino</a>
       <a href="#tyla">Tyla</a>
-      <a href="#dojacat">Doja Cat</a>
+      <a href="#doja-cat">Doja Cat</a>
       <a href="#leon-thomas">Leon Thomas</a>
       <a href="#beyonce">Beyoncé</a>
-      <a href="#doe-chii">Doechii</a>
+      <a href="#doechii">Doechii</a>
       <a href="#olivia-dean">Olivia Dean</a>
       <a href="#ravyn-lenae">Ravyn Lenae</a>
       <a href="#rochelle-jordan">Rochelle Jordan</a>
       <a href="#solange">Solange</a>
       <a href="#tinashe">Tinashe</a>
       <a href="#tems">Tems</a>
-      <a href="#victoria">Victoria Monet</a>
+      <a href="#victoria-monet">Victoria Monet</a>
       <a href="#flo">Flo</a>
       <a href="#say-now">Say Now</a>
       <a href="#3quency">3Quency</a>
       <a href="#szn4">SZN4</a>
       <a href="#soulidified">Soulidified</a>
-      <a href="#bryson">Bryson Tiller</a>
-      <a href="#brent">Brent Faiyaz</a>
+      <a href="#bryson-tiller">Bryson Tiller</a>
+      <a href="#brent-faiyaz">Brent Faiyaz</a>
       <a href="#partynextdoor">PARTYNEXTDOOR</a>
-      <a href="#dontoliver">Don Toliver</a>
-      <a href="#swaelee">Swae Lee</a>
-      <a href="#jheneaiko">Jhené Aiko</a>
+      <a href="#don-toliver">Don Toliver</a>
+      <a href="#swae-lee">Swae Lee</a>
+      <a href="#jhene-aiko">Jhené Aiko</a>
       <a href="#babystorme">BabyStorme</a>
+
     </div>
   </section>
+
 </body>
 </html>
+```
