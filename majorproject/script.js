@@ -1,51 +1,55 @@
-// List of tracks with titles and YouTube URLs
 const tracks = [
-  { title: "Steve Lacy - Dark Red", url: "https://www.youtube.com/embed/Q6FarZpy67M?autoplay=1" },
-  { title: "Steve Lacy - C U Girl", url: "https://www.youtube.com/embed/t0fn0Q0DB0E?autoplay=1" },
-  { title: "Steve Lacy - Ryd", url: "https://www.youtube.com/embed/BCV_vlRDrsQ?autoplay=1" },
+  { title: "Steve Lacy - Dark Red", url: "https://www.youtube.com/embed/Q6FarZpy67M?si=83k3oUx6dYD5AtQk" },
+  { title: "Steve Lacy - C U Girl", url: "https://www.youtube.com/embed/t0fn0Q0DB0E?si=LbWg4r_BJVdMfYI_" },
+  { title: "Steve Lacy - Ryd", url: "https://www.youtube.com/embed/BCV_vlRDrsQ?si=LstQmGucR-P0hN2E" },
 ];
 
 let currentTrackIndex = 0;
 
-// Function to load video
 function loadVideo(index) {
   const video = tracks[index];
   const container = document.getElementById('youtube-player');
-  const titleElement = document.getElementById('track-title');
 
   // Clear previous iframe
   container.innerHTML = '';
 
   // Create new iframe
   const iframe = document.createElement('iframe');
-  iframe.width = '560';
-  iframe.height = '315';
+
+  // Responsive styling
+  iframe.style.width = '90%';
+  iframe.style.maxWidth = '700px';
+  iframe.style.height = '400px';
+  iframe.style.borderRadius = '12px';
+
   iframe.src = video.url;
   iframe.title = 'YouTube video player';
   iframe.frameBorder = '0';
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
   iframe.allowFullscreen = true;
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 
   container.appendChild(iframe);
 
-  // Update the track title
-  titleElement.textContent = `Now Playing: ${video.title}`;
+  // Update track title
+  document.getElementById('track-title').textContent = `Now Playing: ${video.title}`;
 }
 
-// Initialize first video
+// Load initial video
 loadVideo(currentTrackIndex);
 
-// Event listeners for next/prev buttons
+// Event listeners for buttons
 document.getElementById('nextVideo').addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
   loadVideo(currentTrackIndex);
 });
+
 document.getElementById('prevVideo').addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
   loadVideo(currentTrackIndex);
 });
 
-// List of artists with Spotify links for search
+// List of artists with their Spotify links
 const artists = [
   { name: "Steve Lacy", spotify: "https://open.spotify.com/artist/57vWImR43h4CaDao012Ofp" },
   { name: "Rihanna", spotify: "https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H" },
@@ -62,7 +66,7 @@ const artists = [
   { name: "Luci4", spotify: "https://open.spotify.com/artist/1CbA4z6JauNQnHzOErDQL6" },
   { name: "Kanii", spotify: "https://open.spotify.com/artist/1S82w4yw9TYIHZ889mPPaW" },
   { name: "Frank Ocean", spotify: "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM" },
-  { name: "Pink Pantheress", spotify: "https://open.spotify.com/artist/78rUTD7y6Cy67W1RVzYs7t" },
+  { name: "PinkPantheress", spotify: "https://open.spotify.com/artist/78rUTD7y6Cy67W1RVzYs7t" },
   { name: "Miguel", spotify: "https://open.spotify.com/artist/360IAlyVv4PCEVjgyMZrxK" },
   { name: "Megan Thee Stallion", spotify: "https://open.spotify.com/artist/181bsRPaVXVlUKXrxwZfHK" },
   { name: "Kehlani", spotify: "https://open.spotify.com/artist/0cGUm45nv7Z6M6qdXYQGTX" },
@@ -96,16 +100,27 @@ const artists = [
   { name: "Don Toliver", spotify: "https://open.spotify.com/artist/4Gso3d4CscCijv0lmajZWs" },
   { name: "Swae Lee", spotify: "https://open.spotify.com/artist/1zNqQNIdeOUZHb8zbZRFMX" },
   { name: "Jhené Aiko", spotify: "https://open.spotify.com/artist/5ZS223C6JyBfXasXxrRqOk" },
-  { name: "Baby Storme", spotify: "https://open.spotify.com/artist/7cwYKm54nTTbnm0UnH0xBe" },
+  { name: "BabyStorme", spotify: "https://open.spotify.com/artist/7cwYKm54nTTbnm0UnH0xBe" },
 ];
 
-// Search button event
+// Search function
 document.getElementById('searchButton').addEventListener('click', () => {
   const input = document.getElementById('searchInput').value.trim().toLowerCase();
-  const artist = artists.find(a => a.name.toLowerCase() === input);
+
+  const artist = artists.find(a =>
+    a.name.toLowerCase().includes(input)
+  );
+
   if (artist) {
     window.open(artist.spotify, '_blank');
   } else {
     alert('Artist not found. Please check the spelling.');
+  }
+});
+
+// Allow Enter key to search
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    document.getElementById('searchButton').click();
   }
 });
