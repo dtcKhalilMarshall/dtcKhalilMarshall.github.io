@@ -1,14 +1,17 @@
+// List of tracks with titles and YouTube URLs
 const tracks = [
-  { title: "Steve Lacy - Dark Red", url: "https://www.youtube.com/embed/Q6FarZpy67M?si=83k3oUx6dYD5AtQk" },
-  { title: "Steve Lacy - C U Girl", url: "https://www.youtube.com/embed/t0fn0Q0DB0E?si=LbWg4r_BJVdMfYI_" },
-  { title: "Steve Lacy - Ryd", url: "https://www.youtube.com/embed/BCV_vlRDrsQ?si=LstQmGucR-P0hN2E" },
+  { title: "Steve Lacy - Dark Red", url: "https://www.youtube.com/embed/Q6FarZpy67M?autoplay=1" },
+  { title: "Steve Lacy - C U Girl", url: "https://www.youtube.com/embed/t0fn0Q0DB0E?autoplay=1" },
+  { title: "Steve Lacy - Ryd", url: "https://www.youtube.com/embed/BCV_vlRDrsQ?autoplay=1" },
 ];
 
 let currentTrackIndex = 0;
 
+// Function to load video
 function loadVideo(index) {
   const video = tracks[index];
   const container = document.getElementById('youtube-player');
+  const titleElement = document.getElementById('track-title');
 
   // Clear previous iframe
   container.innerHTML = '';
@@ -20,31 +23,29 @@ function loadVideo(index) {
   iframe.src = video.url;
   iframe.title = 'YouTube video player';
   iframe.frameBorder = '0';
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
   iframe.allowFullscreen = true;
-  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 
   container.appendChild(iframe);
 
-  // Update track title
-  document.getElementById('track-title').textContent = `Now Playing: ${video.title}`;
+  // Update the track title
+  titleElement.textContent = `Now Playing: ${video.title}`;
 }
 
-// Load initial video
+// Initialize first video
 loadVideo(currentTrackIndex);
 
-// Event listeners for buttons
+// Event listeners for next/prev buttons
 document.getElementById('nextVideo').addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
   loadVideo(currentTrackIndex);
 });
-
 document.getElementById('prevVideo').addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
   loadVideo(currentTrackIndex);
 });
 
-// List of artists with their names and Spotify links
+// List of artists with Spotify links for search
 const artists = [
   { name: "Steve Lacy", spotify: "https://open.spotify.com/artist/57vWImR43h4CaDao012Ofp" },
   { name: "Rihanna", spotify: "https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H" },
@@ -98,7 +99,7 @@ const artists = [
   { name: "Baby Storme", spotify: "https://open.spotify.com/artist/7cwYKm54nTTbnm0UnH0xBe" },
 ];
 
-// Search function
+// Search button event
 document.getElementById('searchButton').addEventListener('click', () => {
   const input = document.getElementById('searchInput').value.trim().toLowerCase();
   const artist = artists.find(a => a.name.toLowerCase() === input);
